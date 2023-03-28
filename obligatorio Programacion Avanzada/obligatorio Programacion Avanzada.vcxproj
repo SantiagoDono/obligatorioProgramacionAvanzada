@@ -127,7 +127,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Clase.cpp" />
+    <ClCompile Include="DtClase.cpp" />
+    <ClCompile Include="DtEntrenamiento.cpp" />
+    <ClCompile Include="DtFecha.cpp" />
+    <ClCompile Include="DtSocio.cpp" />
+    <ClCompile Include="DtSpinning.cpp" />
+    <ClCompile Include="Entrenamiento.cpp" />
+    <ClCompile Include="Inscripcion.cpp" />
     <ClCompile Include="obligatorio Programacion Avanzada.cpp" />
+    <ClCompile Include="Socio.cpp" />
+    <ClCompile Include="Spinning.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Clase.h" />
+    <ClInclude Include="Entrenamiento.h" />
+    <ClInclude Include="Inscripcion.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Socio.h" />
+    <ClInclude Include="Spinning.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="obligatorio Programacion Avanzada.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

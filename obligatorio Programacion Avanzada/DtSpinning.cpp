@@ -1,0 +1,6 @@
+
+class DtSpinning {
+	int cantBicicletas;
+	
+};
+
