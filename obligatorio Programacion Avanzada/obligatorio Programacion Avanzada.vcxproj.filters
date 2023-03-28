@@ -16,24 +16,21 @@
     <Filter Include="Archivos de origen\DataType">
       <UniqueIdentifier>{10d9c850-419a-45a4-a011-532b4abd3ea9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\DataTypes">
+      <UniqueIdentifier>{fbb38092-aa2f-4c51-9790-cd983c4db072}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Clases">
+      <UniqueIdentifier>{4d628fbd-c1f2-4b4f-a0bf-1862f2a40fa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Enum">
+      <UniqueIdentifier>{2833fc02-9378-403a-bad5-fb395524a039}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Clases">
+      <UniqueIdentifier>{2e1f1b9b-d865-446e-81ba-2fb58faf4fc6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="obligatorio Programacion Avanzada.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Clase.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Inscripcion.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Socio.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Spinning.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Entrenamiento.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="DtSocio.cpp">
@@ -51,25 +48,58 @@
     <ClCompile Include="DtSpinning.cpp">
       <Filter>Archivos de origen\DataType</Filter>
     </ClCompile>
+    <ClCompile Include="DtClase.h">
+      <Filter>Archivos de encabezado\DataTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="turno.cpp">
+      <Filter>Archivos de origen\Enum</Filter>
+    </ClCompile>
+    <ClCompile Include="Clase.cpp">
+      <Filter>Archivos de origen\Clases</Filter>
+    </ClCompile>
+    <ClCompile Include="Entrenamiento.cpp">
+      <Filter>Archivos de origen\Clases</Filter>
+    </ClCompile>
+    <ClCompile Include="Inscripcion.cpp">
+      <Filter>Archivos de origen\Clases</Filter>
+    </ClCompile>
+    <ClCompile Include="Socio.cpp">
+      <Filter>Archivos de origen\Clases</Filter>
+    </ClCompile>
+    <ClCompile Include="Spinning.cpp">
+      <Filter>Archivos de origen\Clases</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Clase.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Inscripcion.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Socio.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Spinning.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Clases</Filter>
     </ClInclude>
     <ClInclude Include="Entrenamiento.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Clases</Filter>
+    </ClInclude>
+    <ClInclude Include="Inscripcion.h">
+      <Filter>Archivos de encabezado\Clases</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de encabezado\Clases</Filter>
+    </ClInclude>
+    <ClInclude Include="Socio.h">
+      <Filter>Archivos de encabezado\Clases</Filter>
+    </ClInclude>
+    <ClInclude Include="Spinning.h">
+      <Filter>Archivos de encabezado\Clases</Filter>
+    </ClInclude>
+    <ClInclude Include="DtEntrenamiento.h">
+      <Filter>Archivos de encabezado\DataTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DtFecha.h">
+      <Filter>Archivos de encabezado\DataTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DtSocio.h">
+      <Filter>Archivos de encabezado\DataTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DtSpinning.h">
+      <Filter>Archivos de encabezado\DataTypes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

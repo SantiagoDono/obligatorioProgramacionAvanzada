@@ -24,6 +24,7 @@
     <ProjectGuid>{c31c8b87-2eb7-461a-a9bb-fcaa718b128d}</ProjectGuid>
     <RootNamespace>obligatorioProgramacionAvanzada</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>obligatorioProgramacionAvanzada</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -129,18 +130,24 @@
   <ItemGroup>
     <ClCompile Include="Clase.cpp" />
     <ClCompile Include="DtClase.cpp" />
+    <ClCompile Include="DtClase.h" />
     <ClCompile Include="DtEntrenamiento.cpp" />
     <ClCompile Include="DtFecha.cpp" />
     <ClCompile Include="DtSocio.cpp" />
     <ClCompile Include="DtSpinning.cpp" />
     <ClCompile Include="Entrenamiento.cpp" />
     <ClCompile Include="Inscripcion.cpp" />
-    <ClCompile Include="obligatorio Programacion Avanzada.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Socio.cpp" />
     <ClCompile Include="Spinning.cpp" />
+    <ClCompile Include="turno.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Clase.h" />
+    <ClInclude Include="DtEntrenamiento.h" />
+    <ClInclude Include="DtFecha.h" />
+    <ClInclude Include="DtSocio.h" />
+    <ClInclude Include="DtSpinning.h" />
     <ClInclude Include="Entrenamiento.h" />
     <ClInclude Include="Inscripcion.h" />
     <ClInclude Include="resource.h" />
