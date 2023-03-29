@@ -1,5 +1,5 @@
 #include "Turno.h"
-enum turno {
+enum eTurno {
 	Maniana,
 	Tarde,
 	Noche

@@ -8,22 +8,26 @@ using namespace std;
 class Clase
 {
 	//atributos
-private:
+
 	int id;
 	string nombre;
-	Turno turno;
+	eTurno turno;
 public:
 	Clase();
-	Clase(int ident, string n,Turno turn);
+	Clase(int ident, string n,eTurno turn);
 
 	//getters
 	int getId();
 	string getNombre();
-	Turno getTurno();
+	eTurno getTurno();
 	//setters
 	void setId(int aidi);
 	void setNombre(string nom);
-	void SetTurno(Turno turn);
+	void SetTurno(eTurno turn);
+	//operacion
+	virtual int cupo();
+	//destructor
+	~Clase();
 
 };
 
