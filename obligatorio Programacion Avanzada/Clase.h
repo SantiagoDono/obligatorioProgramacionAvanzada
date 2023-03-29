@@ -14,7 +14,7 @@ private:
 	Turno turno;
 public:
 	Clase();
-	Clase(int ident, string n,enum turn);
+	Clase(int ident, string n,Turno turn);
 
 	//getters
 	int getId();

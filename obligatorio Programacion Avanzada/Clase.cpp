@@ -4,8 +4,9 @@ Clase::Clase()
 {
 }
 
-Clase::Clase(int ident, string n,enum turn)
+Clase::Clase(int ident, string n,Turno turn)
 {
+
 }
 
 int Clase::getId()
@@ -23,12 +24,17 @@ Turno Clase::getTurno()
 	return turno;
 }
 
-void Clase::SetTurno(Turno turn)
+void Clase::setId(int aidi)
 {
-
+	id = aidi;
 }
 
-Clase::Clase(int ident, string n, enum turn) //falta enumerado turno
+void Clase::SetTurno(Turno turn)
+{
+	turno = turn;
+}
+
+Clase::Clase(int ident, string n, Turno turn) //falta enumerado turno
 {
 	id = ident;
 	nombre = n;
