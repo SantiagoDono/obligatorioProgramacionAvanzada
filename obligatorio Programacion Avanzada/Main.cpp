@@ -2,10 +2,15 @@
 //
 
 #include <iostream>
-
+#include "Socio.h";
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
+	string a = "pepe";
+	string b;
+	b = a;
+	cout << b;
+	return 0;
 }
 
 

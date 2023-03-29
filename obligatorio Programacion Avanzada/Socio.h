@@ -1,24 +1,28 @@
 #pragma once
 #include<iostream>
 #include<stdio.h>
+#include<string.h>
+using namespace std;
 class Socio
 {
 	
 		//atributos
 	private:
-		char ci[9];
-		char nombre[30];//puse 30 pensando que es nombre completo
+		 string ci;// probando
+		string nombre;//puse 30 pensando que es nombre completo
 	public:
 		//constructor
 		Socio();//constructor por defecto
-		Socio(char c[9], char n[30]);//contructor comun 
+		Socio(string c, string n);
+		//contructor comun 
 
 		//getters
-		char getCi[9];
-		char getNombre[30];
+		
+		string getCi();
+		string getNombre();
 		//setters
-		void setCi(char c[9]);
-		void setNom(char n[30]);
+		void setCi(string c);
+		void setNom(string n);
 
 		//operaciones
 

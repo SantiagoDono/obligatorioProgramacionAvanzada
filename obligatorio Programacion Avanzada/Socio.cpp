@@ -1,24 +1,38 @@
 #include "Socio.h"
 
-	Socio::Socio()
+//constructores	
+Socio::Socio()
 	{
+		ci = "pepe";
 	}
 
-	Socio::Socio(char c[9]/*cedula*/, char n[30])
+Socio::Socio(string c/*cedula*/, string n)
 	{
-		strcpy_s(ci, c);
-		strcpy_s(nombre, n);
+		ci = c;
+		nombre = n;
+	}
+	string Socio::getCi() {
+		return ci;
 	}
 
-	void Socio::setCi(char c[9])
+	char Socio::getNombre()
 	{
-		strcpy_s(ci, c);
+		return 0;
 	}
 
-	void Socio::setNom(char n[30])
+
+
+	void Socio::setCi(string c)
 	{
-		strcpy_s(nombre, n);
+		ci = c;
 	}
+
+	void Socio::setNom(string n)
+	{
+		nombre = n;
+	}
+
+	
 
 	Socio::~Socio()
 	{
