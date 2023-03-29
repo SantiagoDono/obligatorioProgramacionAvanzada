@@ -4,8 +4,36 @@ Clase::Clase()
 {
 }
 
-Clase::Clase(int ident, char n[20]) //falta enumerado turno
+Clase::Clase(int ident, string n,enum turn)
+{
+}
+
+int Clase::getId()
+{
+	return id;
+}
+
+string Clase::getNombre()
+{
+	return nombre;
+}
+
+Turno Clase::getTurno()
+{
+	return turno;
+}
+
+void Clase::SetTurno(Turno turn)
+{
+
+}
+
+Clase::Clase(int ident, string n, enum turn) //falta enumerado turno
 {
 	id = ident;
-	strcpy_s(nombre, n);
+	nombre = n;
+	
+
+	
+
 }

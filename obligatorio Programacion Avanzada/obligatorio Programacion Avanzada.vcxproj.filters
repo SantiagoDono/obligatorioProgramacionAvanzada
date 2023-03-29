@@ -28,6 +28,9 @@
     <Filter Include="Archivos de origen\Clases">
       <UniqueIdentifier>{2e1f1b9b-d865-446e-81ba-2fb58faf4fc6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Enum">
+      <UniqueIdentifier>{547956a2-148f-43b1-8c07-673a815675fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -51,9 +54,6 @@
     <ClCompile Include="DtClase.h">
       <Filter>Archivos de encabezado\DataTypes</Filter>
     </ClCompile>
-    <ClCompile Include="turno.cpp">
-      <Filter>Archivos de origen\Enum</Filter>
-    </ClCompile>
     <ClCompile Include="Clase.cpp">
       <Filter>Archivos de origen\Clases</Filter>
     </ClCompile>
@@ -68,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="Spinning.cpp">
       <Filter>Archivos de origen\Clases</Filter>
+    </ClCompile>
+    <ClCompile Include="Turno.cpp">
+      <Filter>Archivos de origen\Enum</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="DtSpinning.h">
       <Filter>Archivos de encabezado\DataTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="Turno.h">
+      <Filter>Archivos de encabezado\Enum</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

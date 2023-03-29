@@ -2,7 +2,7 @@
 //
 
 #include <iostream>
-#include "Socio.h";
+#include "Socio.h"
 using namespace std;
 int main()
 {

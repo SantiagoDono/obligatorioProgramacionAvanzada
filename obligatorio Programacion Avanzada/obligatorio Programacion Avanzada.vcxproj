@@ -140,7 +140,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Socio.cpp" />
     <ClCompile Include="Spinning.cpp" />
-    <ClCompile Include="turno.cpp" />
+    <ClCompile Include="Turno.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Clase.h" />
@@ -153,6 +153,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Socio.h" />
     <ClInclude Include="Spinning.h" />
+    <ClInclude Include="Turno.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="obligatorio Programacion Avanzada.rc" />
