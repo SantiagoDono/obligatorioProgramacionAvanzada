@@ -15,9 +15,9 @@ Socio::Socio(string c/*cedula*/, string n)
 		return ci;
 	}
 
-	char Socio::getNombre()
+	string Socio::getNombre()
 	{
-		return 0;
+		return nombre;
 	}
 
 
