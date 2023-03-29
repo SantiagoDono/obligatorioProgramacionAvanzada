@@ -1,7 +1,7 @@
 #pragma once
 #include<iostream>
 #include<stdio.h>
-#include"turno.h"
+
 class Clase
 {
 	//atributos
