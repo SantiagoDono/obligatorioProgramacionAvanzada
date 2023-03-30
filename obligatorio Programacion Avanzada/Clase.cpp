@@ -1,5 +1,6 @@
 #include "Clase.h"
 #include "EnumTurno.h"
+//habria que hacer el llamado del datatype clase? o en el .h
 
 
 Clase::Clase()

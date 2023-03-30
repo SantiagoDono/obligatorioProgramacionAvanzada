@@ -25,7 +25,7 @@ public:
 	void setNombre(string nom);
 	void SetTurno(enumTurno turn);
 	//operacion
-	virtual int cupo();
+	virtual int cupo()=0;//esto se hace para indicar que no va a haber instancias de esta clase 
 	//destructor
 	~Clase();
 
