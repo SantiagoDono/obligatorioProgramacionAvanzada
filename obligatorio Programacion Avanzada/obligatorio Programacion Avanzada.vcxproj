@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Clase.cpp" />
+    <ClCompile Include="Constantes.h" />
     <ClCompile Include="DtClase.cpp" />
     <ClCompile Include="DtClase.h" />
     <ClCompile Include="DtEntrenamiento.cpp" />
@@ -140,7 +141,6 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Socio.cpp" />
     <ClCompile Include="Spinning.cpp" />
-    <ClCompile Include="Turno.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Clase.h" />
@@ -153,7 +153,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Socio.h" />
     <ClInclude Include="Spinning.h" />
-    <ClInclude Include="Turno.h" />
+    <ClInclude Include="EnumTurno.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="obligatorio Programacion Avanzada.rc" />

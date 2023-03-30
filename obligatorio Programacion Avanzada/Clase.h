@@ -1,7 +1,7 @@
 #pragma once
 #include<iostream>
 #include<stdio.h>
-#include"turno.h"
+#include"EnumTurno.h"
 //AGREGAR TURNO QUE ES EL ENUM
 using namespace std;
 
@@ -11,19 +11,19 @@ class Clase
 
 	int id;
 	string nombre;
-	eTurno turno;
+	enumTurno turno;
 public:
 	Clase();
-	Clase(int ident, string n,eTurno turn);
+	Clase(int ident, string n, enumTurno turn);
 
 	//getters
 	int getId();
 	string getNombre();
-	eTurno getTurno();
+	enumTurno getTurno();
 	//setters
 	void setId(int aidi);
 	void setNombre(string nom);
-	void SetTurno(eTurno turn);
+	void SetTurno(enumTurno turn);
 	//operacion
 	virtual int cupo();
 	//destructor

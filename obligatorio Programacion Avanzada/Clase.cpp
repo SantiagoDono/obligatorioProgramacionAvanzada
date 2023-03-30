@@ -1,12 +1,16 @@
 #include "Clase.h"
+#include "EnumTurno.h"
+
 
 Clase::Clase()
 {
 }
 
-Clase::Clase(int ident, string n,eTurno turn)
+Clase::Clase(int ident, string n,enumTurno turn)
 {
-
+	id = ident;
+	nombre = n;
+	turno = turn;
 }
 
 int Clase::getId()
@@ -19,7 +23,7 @@ string Clase::getNombre()
 	return nombre;
 }
 
-eTurno Clase::getTurno()
+enumTurno Clase::getTurno()
 {
 	return turno;
 }
@@ -34,7 +38,7 @@ void Clase::setNombre(string nom)
 	nombre = nom;
 }
 
-void Clase::SetTurno(eTurno turn)
+void Clase::SetTurno(enumTurno turn)
 {
 	turno = turn;
 }
@@ -42,17 +46,11 @@ void Clase::SetTurno(eTurno turn)
 int Clase::cupo()
 {
  //Ver como implementarlo 
+	return 0;
 }
 
 Clase::~Clase()
 {
-}
-
-Clase::Clase(int ident, string n, eTurno turn) //falta enumerado turno
-{
-	id = ident;
-	nombre = n;
-	turno = turn;
 }
 
 //destructor
