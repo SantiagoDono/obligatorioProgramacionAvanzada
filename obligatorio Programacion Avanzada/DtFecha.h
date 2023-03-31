@@ -5,10 +5,10 @@ class DtFecha
 	private:
 		int dia;
 		int mes;
-		int año;
+		int anio;
 	public:
 		DtFecha();
-		DtFecha(int dia, int mes, int año);
+		DtFecha(int dia, int mes, int anio);
 		~DtFecha();
 };
 

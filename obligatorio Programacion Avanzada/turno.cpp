@@ -1,4 +1,4 @@
-#include "Turno.h"
+#include "EnumTurno.h"
 enum eTurno {
 	Maniana,
 	Tarde,
