@@ -3,7 +3,7 @@
 class Spinning : public Clase
 {
 	private:
-		int cantBicicletas;
+		int _cantBicicletas;
 
 	public:
 		//Constructores

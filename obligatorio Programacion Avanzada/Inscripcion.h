@@ -5,8 +5,8 @@
 class Inscripcion
 {	
 	private:
-		DtFecha fecha;
-		Socio * socio;
+		DtFecha _fecha;
+		Socio * _socio;
 	public:
 		Inscripcion();
 		Inscripcion(DtFecha fecha, Socio* socio);

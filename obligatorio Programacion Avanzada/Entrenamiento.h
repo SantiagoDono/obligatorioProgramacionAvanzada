@@ -3,7 +3,7 @@
 class Entrenamiento :public Clase
 {
 	private:
-		bool enRambla;
+		bool _enRambla;
 
 	public:
 		//Constructores

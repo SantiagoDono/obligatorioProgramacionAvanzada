@@ -2,17 +2,17 @@
 #include "DtFecha.h"
 
 Inscripcion::Inscripcion(){
-	this->fecha = DtFecha();
-	this->socio = new Socio();
+	this->_fecha = DtFecha();
+	this->_socio = new Socio();
 }
 Inscripcion::Inscripcion(DtFecha fecha, Socio* socio) {
-	this->fecha = fecha;
-	this->socio = new Socio(socio->GetCi(), socio->GetNombre());
+	this->_fecha = fecha;
+	this->_socio = new Socio(socio->GetCi(), socio->GetNombre());
 }
 DtFecha Inscripcion::GetFecha(){
-	return fecha;
+	return _fecha;
 }
 void Inscripcion::SetFecha(DtFecha fecha) {
-	this->fecha = fecha;
+	this->_fecha = fecha;
 }
 Inscripcion::~Inscripcion(){}

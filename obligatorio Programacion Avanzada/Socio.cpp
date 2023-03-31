@@ -4,28 +4,28 @@
 //constructores	
 Socio::Socio()
 {
-	ci = SIN_CI;
-	nombre = SIN_NOMBRE;
+	_ci = SIN_CI;
+	_nombre = SIN_NOMBRE;
 }
 Socio::Socio(string ci, string nombre)
 {
-	this->ci = ci;
-	this->nombre = nombre;
+	this->_ci = ci;
+	this->_nombre = nombre;
 }
 string Socio::GetCi() {
-	return ci;
+	return _ci;
 }
 string Socio::GetNombre()
 {
-	return nombre;
+	return _nombre;
 }
 void Socio::SetCi(string ci)
 {
-	this->ci = ci;
+	this->_ci = ci;
 }
 void Socio::SetNombre(string nombre)
 {
-	this->nombre = nombre;
+	this->_nombre = nombre;
 }
 Socio::~Socio()
 {

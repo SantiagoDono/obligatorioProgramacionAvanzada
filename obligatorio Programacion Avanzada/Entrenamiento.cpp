@@ -3,7 +3,7 @@
 
 //Constructores
 Entrenamiento::Entrenamiento() : Clase() {
-	this->enRambla = EN_RAMBLA_DEFAULT;
+	this->_enRambla = EN_RAMBLA_DEFAULT;
 }
 Entrenamiento::Entrenamiento(
 	bool enRambla, 
@@ -13,19 +13,19 @@ Entrenamiento::Entrenamiento(
 	list<Inscripcion*>* inscripciones) 
 	: Clase(id, nombre, turno, inscripciones)
 {
-	this->enRambla = enRambla;
+	this->_enRambla = enRambla;
 }
 //Getters
 bool Entrenamiento::GetEnRambla() {
-	return enRambla;
+	return _enRambla;
 }
 //Setters
 void Entrenamiento::SetEnRambla(bool enRambla) {
-	this->enRambla = enRambla;
+	this->_enRambla = enRambla;
 }
 //Operaciones
 int Entrenamiento::Cupo() {
-	if (this->enRambla)
+	if (this->_enRambla)
 		return CUPO_RAMBLA_TRUE - (int)this->GetInscripciones()->size();
 	else
 		return CUPO_RAMBLA_FALSE - (int)this->GetInscripciones()->size();

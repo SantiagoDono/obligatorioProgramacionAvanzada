@@ -7,8 +7,8 @@ class Socio
 {
 	private:
 		//atributos
-		string ci;
-		string nombre;
+		string _ci;
+		string _nombre;
 	public:
 		//constructor
 		Socio();
