@@ -6,17 +6,17 @@ DtFecha::DtFecha()
 {
 	dia = MIN_FECHA_DIA;
 	mes = MIN_FECHA_MES;
-	año = MIN_FECHA_AÑO;
+	anio = MIN_FECHA_ANIO;
 }
-DtFecha::DtFecha(int dia, int mes, int año)
+DtFecha::DtFecha(int dia, int mes, int anio)
 {
 	this->dia = dia;
 	this->mes = mes;
-	this->año = año;
+	this->anio = anio;
 
 	if (this->dia < MIN_FECHA_DIA || this->dia > MAX_FECHA_DIA ||
 		this->mes < MIN_FECHA_MES || this->mes > MAX_FECHA_MES ||
-		this->año < MIN_FECHA_AÑO)
+		this->anio < MIN_FECHA_ANIO)
 	{
 		//std::invalid_argument::invalid_argument;
 	}
