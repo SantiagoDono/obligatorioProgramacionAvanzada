@@ -1,33 +1,43 @@
 #pragma once
 #include<iostream>
 #include<stdio.h>
+#include<list>
 #include"EnumTurno.h"
-//AGREGAR TURNO QUE ES EL ENUM
+#include"Inscripcion.h"
+
 using namespace std;
 
 class Clase
 {
-	//atributos
+	private:
+		//atributos
+		int _id;
+		string _nombre;
+		enumTurno _turno;
 
-	int id;
-	string nombre;
-	enumTurno turno;
-public:
-	Clase();
-	Clase(int ident, string n, enumTurno turn);
+		//pseudoatrr
+		list<Inscripcion *> * _inscripciones;
 
-	//getters
-	int getId();
-	string getNombre();
-	enumTurno getTurno();
-	//setters
-	void setId(int aidi);
-	void setNombre(string nom);
-	void SetTurno(enumTurno turn);
-	//operacion
-	virtual int cupo()=0;//esto se hace para indicar que no va a haber instancias de esta clase 
-	//destructor
-	~Clase();
+	public:
+		Clase();
+		Clase(int id, string nombre, enumTurno turno, list<Inscripcion*> * inscripciones);
 
+		//getters
+		int GetId();
+		string GetNombre();
+		enumTurno GetTurno();
+		list<Inscripcion *> * GetInscripciones();
+
+		//setters
+		void SetId(int id);
+		void SetNombre(string nombre);
+		void SetTurno(enumTurno turno);
+		void SetInscripciones(list<Inscripcion *> * inscripciones);
+
+		//operacion
+		virtual int Cupo()=0;//esto se hace para indicar que no va a haber instancias de esta clase 
+		
+		//destructor
+		~Clase();
 };
 

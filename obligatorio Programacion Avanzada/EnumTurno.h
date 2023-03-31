@@ -2,6 +2,7 @@
 enum enumTurno {
 	Manana,
 	Tarde,
-	Noche
+	Noche,
+	SinAsignar, //preguntar
 };
 

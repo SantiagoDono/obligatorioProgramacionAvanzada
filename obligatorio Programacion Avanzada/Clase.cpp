@@ -1,57 +1,60 @@
 #include "Clase.h"
-#include "EnumTurno.h"
-//habria que hacer el llamado del datatype clase? o en el .h
+#include "Constantes.h"
 
-
-Clase::Clase()
-{
+Clase::Clase(){
+	this->_id = ID_NULO;
+	this->_nombre = SIN_NOMBRE;
+	this->_turno = SinAsignar;
+	this->_inscripciones = new list<Inscripcion *>();
 }
-
-Clase::Clase(int ident, string n,enumTurno turn)
+Clase::Clase(int id, string nombre, enumTurno turno, list<Inscripcion *> * inscripciones)
 {
-	id = ident;
-	nombre = n;
-	turno = turn;
+	this->_id = id;
+	this->_nombre = nombre;
+	this->_turno = turno;
+	list<Inscripcion*>* nuevaLista = new list<Inscripcion*>();
+	for (Inscripcion * ins : *inscripciones)
+	{
+		nuevaLista->push_back(ins);
+	}
+	this->_inscripciones = nuevaLista;
 }
-
-int Clase::getId()
+int Clase::GetId()
 {
-	return id;
+	return _id;
 }
-
-string Clase::getNombre()
+string Clase::GetNombre()
 {
-	return nombre;
+	return _nombre;
 }
-
-enumTurno Clase::getTurno()
+enumTurno Clase::GetTurno()
 {
-	return turno;
+	return _turno;
 }
-
-void Clase::setId(int aidi)
+list<Inscripcion *> * Clase::GetInscripciones() {
+	return _inscripciones;
+}
+void Clase::SetId(int id)
 {
-	id = aidi;
+	this->_id = id;
 }
-
-void Clase::setNombre(string nom)
+void Clase::SetNombre(string nombre)
 {
-	nombre = nom;
+	this->_nombre = nombre;
 }
-
-void Clase::SetTurno(enumTurno turn)
+void Clase::SetTurno(enumTurno turno)
 {
-	turno = turn;
+	this->_turno = turno;
 }
-
-int Clase::cupo()
+void Clase::SetInscripciones(list<Inscripcion *> * inscripciones) {
+	this->_inscripciones = inscripciones;
+}
+int Clase::Cupo()
 {
  //Ver como implementarlo 
 	return 0;
 }
-
-Clase::~Clase()
-{
-}
-
 //destructor
+Clase::~Clase(){}
+
+

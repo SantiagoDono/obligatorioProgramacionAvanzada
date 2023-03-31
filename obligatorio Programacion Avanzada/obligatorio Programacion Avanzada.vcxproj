@@ -150,7 +150,6 @@
     <ClInclude Include="DtSpinning.h" />
     <ClInclude Include="Entrenamiento.h" />
     <ClInclude Include="Inscripcion.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="Socio.h" />
     <ClInclude Include="Spinning.h" />
     <ClInclude Include="EnumTurno.h" />

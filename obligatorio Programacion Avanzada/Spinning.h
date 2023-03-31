@@ -2,6 +2,29 @@
 #include "Clase.h"
 class Spinning : public Clase
 {
+	private:
+		int cantBicicletas;
 
+	public:
+		//Constructores
+		Spinning();
+		Spinning(
+			int cantBicicletas,
+			int id,
+			string nombre,
+			enumTurno turno,
+			list<Inscripcion*>* inscripciones);
+
+		//Getters
+		int GetCantBicicletas();
+
+		//Setters
+		void SetCantBicicletas(int cantBicicletas);
+
+		//Operaciones
+		int Cupo();
+
+		//Destructor
+		~Spinning();
 };
 

@@ -5,26 +5,21 @@
 using namespace std;
 class Socio
 {
-	
-		//atributos
 	private:
-		 string ci;// probando
-		string nombre;//puse 30 pensando que es nombre completo
+		//atributos
+		string ci;
+		string nombre;
 	public:
 		//constructor
-		Socio();//constructor por defecto
-		Socio(string c, string n);
-		//contructor comun 
+		Socio();
+		Socio(string ci, string nombre);
 
 		//getters
-		
-		string getCi();
-		string getNombre();
+		string GetCi();
+		string GetNombre();
 		//setters
-		void setCi(string c);
-		void setNom(string n);
-
-		//operaciones
+		void SetCi(string ci);
+		void SetNombre(string nombre);
 
 		//destructor
 		~Socio();

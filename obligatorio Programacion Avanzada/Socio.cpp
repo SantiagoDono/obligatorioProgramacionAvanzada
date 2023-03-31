@@ -1,41 +1,34 @@
 #include "Socio.h"
+#include "Constantes.h"
 
 //constructores	
 Socio::Socio()
-	{
-		ci = "pepe";
-	}
-
-Socio::Socio(string c/*cedula*/, string n)
-	{
-		ci = c;
-		nombre = n;
-	}
-	string Socio::getCi() {
-		return ci;
-	}
-
-	string Socio::getNombre()
-	{
-		return nombre;
-	}
-
-
-
-	void Socio::setCi(string c)
-	{
-		ci = c;
-	}
-
-	void Socio::setNom(string n)
-	{
-		nombre = n;
-	}
-
-	
-
-	Socio::~Socio()
-	{
-	}
+{
+	ci = SIN_CI;
+	nombre = SIN_NOMBRE;
+}
+Socio::Socio(string ci, string nombre)
+{
+	this->ci = ci;
+	this->nombre = nombre;
+}
+string Socio::GetCi() {
+	return ci;
+}
+string Socio::GetNombre()
+{
+	return nombre;
+}
+void Socio::SetCi(string ci)
+{
+	this->ci = ci;
+}
+void Socio::SetNombre(string nombre)
+{
+	this->nombre = nombre;
+}
+Socio::~Socio()
+{
+}
 
 

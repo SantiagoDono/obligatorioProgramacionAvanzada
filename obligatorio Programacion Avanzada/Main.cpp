@@ -3,13 +3,14 @@
 
 #include <iostream>
 #include "Socio.h"
+#include <list>
 using namespace std;
 int main()
 {
-	string a = "pepe";
-	string b;
-	b = a;
-	cout << b;
+	int a = 2;
+	list<int> miLista = { 1, 2, 3, 4, 5 };
+	size_t tamano = miLista.size() - a;
+	cout << tamano;
 	return 0;
 }
 

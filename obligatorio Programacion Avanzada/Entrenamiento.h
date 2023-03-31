@@ -3,18 +3,27 @@
 class Entrenamiento :public Clase
 {
 	private:
-		int cantBicicletas;
+		bool enRambla;
 
 	public:
 		//Constructores
 		Entrenamiento();
-		Entrenamiento(int cantBicicletas);
+		Entrenamiento(
+			bool enRambla, 
+			int id, 
+			string nombre, 
+			enumTurno turno, 
+			list<Inscripcion*>* inscripciones);
+
 		//Getters
-		int GetCantBicicletas();
+		bool GetEnRambla();
+
 		//Setters
-		void SetCantBicicletas(int cantBicicletas);
+		void SetEnRambla(bool enRambla);
+
 		//Operaciones
-		int cupo();
+		int Cupo();
+
 		//Destructor
 		~Entrenamiento();
 };

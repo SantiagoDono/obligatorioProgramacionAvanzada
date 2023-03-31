@@ -1,8 +1,21 @@
 #include "DtFecha.h"
+#include "Socio.h"
 
 #pragma once
 class Inscripcion
-{
-	DtFecha fecha;
+{	
+	private:
+		DtFecha fecha;
+		Socio * socio;
+	public:
+		Inscripcion();
+		Inscripcion(DtFecha fecha, Socio* socio);
+
+		DtFecha GetFecha();
+		Socio * GetSocio();
+		void SetFecha(DtFecha fecha);
+		void SetSocio(Socio* socio);
+
+		~Inscripcion();
 };
 

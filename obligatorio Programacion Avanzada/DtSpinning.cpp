@@ -1,6 +1,0 @@
-
-class DtSpinning {
-	int cantBicicletas;
-	
-};
-

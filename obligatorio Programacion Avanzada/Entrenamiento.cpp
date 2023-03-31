@@ -1,23 +1,34 @@
 #include "Entrenamiento.h"
+#include "Constantes.h"
 
 //Constructores
-Entrenamiento::Entrenamiento() {
-	cantBicicletas = 0;
+Entrenamiento::Entrenamiento() : Clase() {
+	this->enRambla = EN_RAMBLA_DEFAULT;
 }
-Entrenamiento::Entrenamiento(int cantBicicletas) {
-	this->cantBicicletas = cantBicicletas;
+Entrenamiento::Entrenamiento(
+	bool enRambla, 
+	int id, 
+	string nombre, 
+	enumTurno turno, 
+	list<Inscripcion*>* inscripciones) 
+	: Clase(id, nombre, turno, inscripciones)
+{
+	this->enRambla = enRambla;
 }
 //Getters
-int Entrenamiento::GetCantBicicletas() {
-	return cantBicicletas;
+bool Entrenamiento::GetEnRambla() {
+	return enRambla;
 }
 //Setters
-void Entrenamiento::SetCantBicicletas(int cantBicicletas) {
-	this->cantBicicletas = cantBicicletas;
+void Entrenamiento::SetEnRambla(bool enRambla) {
+	this->enRambla = enRambla;
 }
 //Operaciones
-int Entrenamiento::cupo() {
-	return cantBicicletas;
+int Entrenamiento::Cupo() {
+	if (this->enRambla)
+		return CUPO_RAMBLA_TRUE - (int)this->GetInscripciones()->size();
+	else
+		return CUPO_RAMBLA_FALSE - (int)this->GetInscripciones()->size();
 }
 //Destructor
 Entrenamiento::~Entrenamiento(){}

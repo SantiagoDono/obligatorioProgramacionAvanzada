@@ -69,8 +69,8 @@
     <ClCompile Include="Spinning.cpp">
       <Filter>Archivos de origen\Clases</Filter>
     </ClCompile>
-    <ClCompile Include="Turno.cpp">
-      <Filter>Archivos de origen\Enum</Filter>
+    <ClCompile Include="Constantes.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -81,9 +81,6 @@
       <Filter>Archivos de encabezado\Clases</Filter>
     </ClInclude>
     <ClInclude Include="Inscripcion.h">
-      <Filter>Archivos de encabezado\Clases</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
       <Filter>Archivos de encabezado\Clases</Filter>
     </ClInclude>
     <ClInclude Include="Socio.h">
@@ -104,8 +101,8 @@
     <ClInclude Include="DtSpinning.h">
       <Filter>Archivos de encabezado\DataTypes</Filter>
     </ClInclude>
-    <ClInclude Include="Turno.h">
-      <Filter>Archivos de encabezado\Enum</Filter>
+    <ClInclude Include="EnumTurno.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
