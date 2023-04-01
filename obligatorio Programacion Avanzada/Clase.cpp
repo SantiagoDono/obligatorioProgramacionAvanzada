@@ -7,7 +7,7 @@ Clase::Clase(){
 	this->_turno = SinAsignar;
 	this->_inscripciones = new list<Inscripcion *>();
 }
-Clase::Clase(int id, string nombre, enumTurno turno, list<Inscripcion *> * inscripciones)
+Clase::Clase(int id, string nombre, enumTurno turno, list<Inscripcion *> * inscripciones)//va solo el asterisco de adentro
 {
 	this->_id = id;
 	this->_nombre = nombre;

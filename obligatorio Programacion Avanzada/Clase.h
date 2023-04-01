@@ -16,7 +16,7 @@ class Clase
 		enumTurno _turno;
 
 		//pseudoatrr
-		list<Inscripcion *> * _inscripciones;
+		list<Inscripcion *> * _inscripciones; // va solo el asterisco de adentro 
 
 	public:
 		Clase();
@@ -32,7 +32,7 @@ class Clase
 		void SetId(int id);
 		void SetNombre(string nombre);
 		void SetTurno(enumTurno turno);
-		void SetInscripciones(list<Inscripcion *> * inscripciones);
+		void SetInscripciones(list<Inscripcion *> * inscripciones); // este ultimo asterisco no va 
 
 		//operacion
 		virtual int Cupo()=0;//esto se hace para indicar que no va a haber instancias de esta clase 
