@@ -11,9 +11,13 @@ private:
     int _id;
     string _nombre;
     enumTurno _turno;
-// list<Inscripcion *> _inscripciones;
 
 public:
     DtClase(int  id, string nombre, enumTurno turno);
+
+    int GetId();
+    string GetNombre();
+    enumTurno GetTurno();
+    
     ~DtClase();
 };

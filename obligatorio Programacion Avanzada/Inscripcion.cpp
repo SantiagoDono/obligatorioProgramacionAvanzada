@@ -1,5 +1,6 @@
 #include "Inscripcion.h"
 #include "DtFecha.h"
+#include "Constantes.h"
 
 Inscripcion::Inscripcion(){
 	this->_fecha = DtFecha();

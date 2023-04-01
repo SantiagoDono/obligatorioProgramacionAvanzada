@@ -3,12 +3,17 @@
 class DtFecha
 {
 	private:
-		int dia;
-		int mes;
-		int anio;
+		int _dia;
+		int _mes;
+		int _anio;
 	public:
 		DtFecha();
 		DtFecha(int dia, int mes, int anio);
+		
+		int GetAnio();
+		int GetMes();
+		int GetDia();
+		
 		~DtFecha();
 };
 
