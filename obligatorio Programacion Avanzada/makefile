@@ -4,7 +4,7 @@ CONSTANTES = Constantes.h
 # Objetivo
 todo: Main.o Entrenamiento.o Spinning.o Clase.o Inscripcion.o Socio.o DtFecha.o
 # Principal
-main.o: Socio.o Main.cpp
+main.o: Entrenamiento.o Main.cpp
 	g++ -Wall -c Main.cpp
 
 # Clases
