@@ -49,11 +49,6 @@ void Clase::SetTurno(enumTurno turno)
 void Clase::SetInscripciones(list<Inscripcion *> inscripciones) {
 	this->_inscripciones = inscripciones;
 }
-int Clase::Cupo()
-{
- //Ver como implementarlo 
-	return 0;
-}
 //destructor
 Clase::~Clase(){
 	for (Inscripcion* ins : this->_inscripciones) {

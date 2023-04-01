@@ -23,6 +23,7 @@ class Entrenamiento :public Clase
 
 		//Operaciones
 		int Cupo();
+		void InsertarInscripcion(Inscripcion* inscripcion);
 
 		//Destructor
 		~Entrenamiento();

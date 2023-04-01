@@ -35,7 +35,8 @@ class Clase
 		void SetInscripciones(list<Inscripcion *> inscripciones);
 		
 		virtual int Cupo()=0;//esto se hace para indicar que no va a haber instancias de esta clase 
-		
+		virtual void InsertarInscripcion(Inscripcion * inscripcion)=0;
+
 		//destructor
 		~Clase();
 };

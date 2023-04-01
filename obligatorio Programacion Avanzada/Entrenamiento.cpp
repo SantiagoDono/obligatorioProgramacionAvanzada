@@ -30,6 +30,38 @@ int Entrenamiento::Cupo() {
 	else
 		return CUPO_RAMBLA_FALSE - (int)this->GetInscripciones().size();
 }
+void Entrenamiento::InsertarInscripcion(Inscripcion* inscripcion) {
+	try
+	{
+		//Hay que manejar dtinscrpcion en este caso?
+		if (Cupo() == 0)
+			throw invalid_argument("No hay cupo disponible.");
+		/*
+		throw invalid_argument refiere al tipo? 
+		en mensaje ponemos algo que queramos o va "invalid_argument"?
+		*/
+
+		list<Inscripcion*> listaNueva = this->GetInscripciones();
+		listaNueva.push_back(new Inscripcion(inscripcion->GetFecha(), inscripcion->GetSocio()));
+
+		for (Inscripcion* ins : this->GetInscripciones()) {
+			delete ins;
+		}
+
+		this->SetInscripciones(listaNueva);
+
+		/*
+		Hay que borrar memoria de la lista vieja? 
+		con la línea 42,se copia como un array de punteros?
+		No pide explicitamente memoria para los punteros a inscripcioón
+		*/
+	}
+	catch (exception& ex) 
+	{
+		cerr << "Error code: " << ex.what();
+	}
+}
+
 //Destructor
 Entrenamiento::~Entrenamiento(){
 	/*	this->~Clase();
