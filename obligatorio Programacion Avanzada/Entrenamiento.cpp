@@ -10,7 +10,7 @@ Entrenamiento::Entrenamiento(
 	int id, 
 	string nombre, 
 	enumTurno turno, 
-	list<Inscripcion*>* inscripciones) 
+	list<Inscripcion*> inscripciones) 
 	: Clase(id, nombre, turno, inscripciones)
 {
 	this->_enRambla = enRambla;
@@ -26,10 +26,15 @@ void Entrenamiento::SetEnRambla(bool enRambla) {
 //Operaciones
 int Entrenamiento::Cupo() {
 	if (this->_enRambla)
-		return CUPO_RAMBLA_TRUE - (int)this->GetInscripciones()->size();
+		return CUPO_RAMBLA_TRUE - (int)this->GetInscripciones().size();
 	else
-		return CUPO_RAMBLA_FALSE - (int)this->GetInscripciones()->size();
+		return CUPO_RAMBLA_FALSE - (int)this->GetInscripciones().size();
 }
 //Destructor
-Entrenamiento::~Entrenamiento(){}
+Entrenamiento::~Entrenamiento(){
+	/*	this->~Clase();
+		Preguntar: cuando se destruyen las clases hijas,
+		hay que destruir al padre?
+	*/
+}
 

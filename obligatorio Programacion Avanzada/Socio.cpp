@@ -27,8 +27,6 @@ void Socio::SetNombre(string nombre)
 {
 	this->_nombre = nombre;
 }
-Socio::~Socio()
-{
-}
+Socio::~Socio(){}
 
 

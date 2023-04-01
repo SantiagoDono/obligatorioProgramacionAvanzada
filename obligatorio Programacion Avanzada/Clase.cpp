@@ -4,18 +4,18 @@
 Clase::Clase(){
 	this->_id = ID_NULO;
 	this->_nombre = SIN_NOMBRE;
-	this->_turno = SinAsignar;
-	this->_inscripciones = new list<Inscripcion *>();
+	this->_turno = Manana;
+	this->_inscripciones = list<Inscripcion *>();
 }
-Clase::Clase(int id, string nombre, enumTurno turno, list<Inscripcion *> * inscripciones)//va solo el asterisco de adentro
+Clase::Clase(int id, string nombre, enumTurno turno, list<Inscripcion *> inscripciones)//va solo el asterisco de adentro
 {
 	this->_id = id;
 	this->_nombre = nombre;
 	this->_turno = turno;
-	list<Inscripcion*>* nuevaLista = new list<Inscripcion*>();
-	for (Inscripcion * ins : *inscripciones)
+	list<Inscripcion*> nuevaLista = list<Inscripcion*>();
+	for (Inscripcion * ins : inscripciones)
 	{
-		nuevaLista->push_back(ins);
+		nuevaLista.push_back(ins);
 	}
 	this->_inscripciones = nuevaLista;
 }
@@ -31,7 +31,7 @@ enumTurno Clase::GetTurno()
 {
 	return _turno;
 }
-list<Inscripcion *> * Clase::GetInscripciones() {
+list<Inscripcion *> Clase::GetInscripciones() {
 	return _inscripciones;
 }
 void Clase::SetId(int id)
@@ -46,7 +46,7 @@ void Clase::SetTurno(enumTurno turno)
 {
 	this->_turno = turno;
 }
-void Clase::SetInscripciones(list<Inscripcion *> * inscripciones) {
+void Clase::SetInscripciones(list<Inscripcion *> inscripciones) {
 	this->_inscripciones = inscripciones;
 }
 int Clase::Cupo()
@@ -55,6 +55,10 @@ int Clase::Cupo()
 	return 0;
 }
 //destructor
-Clase::~Clase(){}
+Clase::~Clase(){
+	for (Inscripcion* ins : this->_inscripciones) {
+		delete ins;
+	}
+}
 
 

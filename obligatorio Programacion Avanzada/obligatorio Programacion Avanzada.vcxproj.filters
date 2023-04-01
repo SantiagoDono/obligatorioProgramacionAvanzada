@@ -36,9 +36,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="DtSocio.cpp">
-      <Filter>Archivos de origen\DataType</Filter>
-    </ClCompile>
     <ClCompile Include="DtFecha.cpp">
       <Filter>Archivos de origen\DataType</Filter>
     </ClCompile>
@@ -95,9 +92,6 @@
     <ClInclude Include="DtFecha.h">
       <Filter>Archivos de encabezado\DataTypes</Filter>
     </ClInclude>
-    <ClInclude Include="DtSocio.h">
-      <Filter>Archivos de encabezado\DataTypes</Filter>
-    </ClInclude>
     <ClInclude Include="DtSpinning.h">
       <Filter>Archivos de encabezado\DataTypes</Filter>
     </ClInclude>
@@ -109,5 +103,10 @@
     <ResourceCompile Include="obligatorio Programacion Avanzada.rc">
       <Filter>Archivos de recursos</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="makefile">
+      <Filter>Archivos de recursos</Filter>
+    </None>
   </ItemGroup>
 </Project>

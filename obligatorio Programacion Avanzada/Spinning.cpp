@@ -9,7 +9,7 @@ Spinning::Spinning(
 	int id,
 	string nombre,
 	enumTurno turno,
-	list<Inscripcion*>* inscripciones) 
+	list<Inscripcion*> inscripciones) 
 	: Clase(id, nombre, turno, inscripciones)
 {
 	this->_cantBicicletas = cantBicicletas;
@@ -24,7 +24,12 @@ void Spinning::SetCantBicicletas(int cantBicicletas) {
 }
 //Operaciones
 int Spinning::Cupo() {
-	return _cantBicicletas - (int)this->GetInscripciones()->size();
+	return _cantBicicletas - (int)this->GetInscripciones().size();
 }
 //Destructor
-Spinning::~Spinning(){}
+Spinning::~Spinning(){
+	/*	this->~Clase(); 
+		Preguntar: cuando se destruyen las clases hijas, 
+		hay que destruir al padre?
+	*/
+}

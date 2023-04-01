@@ -12,7 +12,16 @@ Inscripcion::Inscripcion(DtFecha fecha, Socio* socio) {
 DtFecha Inscripcion::GetFecha(){
 	return _fecha;
 }
+Socio* Inscripcion::GetSocio() {
+	return _socio;
+}
 void Inscripcion::SetFecha(DtFecha fecha) {
 	this->_fecha = fecha;
 }
-Inscripcion::~Inscripcion(){}
+void Inscripcion::SetSocio(Socio* socio) {
+	this->_socio->SetCi(socio->GetCi());
+	this->_socio->SetNombre(socio->GetNombre());
+}
+Inscripcion::~Inscripcion(){
+	delete _socio;
+}

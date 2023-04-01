@@ -13,7 +13,7 @@ class Entrenamiento :public Clase
 			int id, 
 			string nombre, 
 			enumTurno turno, 
-			list<Inscripcion*>* inscripciones);
+			list<Inscripcion*> inscripciones);
 
 		//Getters
 		bool GetEnRambla();
