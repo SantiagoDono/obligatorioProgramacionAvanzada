@@ -30,7 +30,7 @@ int Entrenamiento::Cupo() {
 	else
 		return CUPO_RAMBLA_FALSE - (int)this->GetInscripciones().size();
 }
-void Entrenamiento::InsertarInscripcion(Inscripcion* inscripcion) {
+void Entrenamiento::InsertarInscripcion(DtInscripcion inscripcion) {
 	try
 	{
 		//Hay que manejar dtinscrpcion en este caso?
@@ -42,7 +42,7 @@ void Entrenamiento::InsertarInscripcion(Inscripcion* inscripcion) {
 		*/
 
 		list<Inscripcion*> listaNueva = this->GetInscripciones();
-		listaNueva.push_back(new Inscripcion(inscripcion->GetFecha(), inscripcion->GetSocio()));
+		listaNueva.push_back(new Inscripcion(inscripcion.GetFecha(), inscripcion.GetSocio()));
 
 		for (Inscripcion* ins : this->GetInscripciones()) {
 			delete ins;
@@ -52,8 +52,8 @@ void Entrenamiento::InsertarInscripcion(Inscripcion* inscripcion) {
 
 		/*
 		Hay que borrar memoria de la lista vieja? 
-		con la línea 42,se copia como un array de punteros?
-		No pide explicitamente memoria para los punteros a inscripcioón
+		con la lï¿½nea 42,se copia como un array de punteros?
+		No pide explicitamente memoria para los punteros a inscripcioï¿½n
 		*/
 	}
 	catch (exception& ex) 

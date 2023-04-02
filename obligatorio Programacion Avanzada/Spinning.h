@@ -1,5 +1,7 @@
 #pragma once
 #include "Clase.h"
+#include "DtInscrpcion.h"
+
 class Spinning : public Clase
 {
 	private:
@@ -20,10 +22,10 @@ class Spinning : public Clase
 
 		//Setters
 		void SetCantBicicletas(int cantBicicletas);
-
+		
 		//Operaciones
 		int Cupo();
-
+		void InsertarInscripcion(DtInscripcion inscripcion);
 		//Destructor
 		~Spinning();
 };

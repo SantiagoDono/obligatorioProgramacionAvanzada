@@ -13,7 +13,9 @@ class DtFecha
 		int GetAnio();
 		int GetMes();
 		int GetDia();
-		
+
+		bool FechaValida(int dia, int mes, int anio);
+
 		~DtFecha();
 };
 

@@ -1,5 +1,7 @@
 #pragma once
 #include "Clase.h"
+#include "DtInscrpcion.h"
+
 class Entrenamiento :public Clase
 {
 	private:
@@ -23,7 +25,7 @@ class Entrenamiento :public Clase
 
 		//Operaciones
 		int Cupo();
-		void InsertarInscripcion(Inscripcion* inscripcion);
+		void InsertarInscripcion(DtInscripcion inscripcion);
 
 		//Destructor
 		~Entrenamiento();
