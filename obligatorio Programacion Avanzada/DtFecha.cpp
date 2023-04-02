@@ -15,7 +15,7 @@ DtFecha::DtFecha(int dia, int mes, int anio)
 	try 
 	{
 		if (!FechaValida(dia, mes, anio))
-			throw invalid_argument("invalid_argument");
+			throw invalid_argument("Fecha invalida.");
 		this->_dia = dia;
 		this->_mes = mes;
 		this->_anio = anio;
