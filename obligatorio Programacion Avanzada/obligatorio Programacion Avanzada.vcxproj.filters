@@ -22,14 +22,8 @@
     <Filter Include="Archivos de encabezado\Clases">
       <UniqueIdentifier>{4d628fbd-c1f2-4b4f-a0bf-1862f2a40fa3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de origen\Enum">
-      <UniqueIdentifier>{2833fc02-9378-403a-bad5-fb395524a039}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de origen\Clases">
       <UniqueIdentifier>{2e1f1b9b-d865-446e-81ba-2fb58faf4fc6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de encabezado\Enum">
-      <UniqueIdentifier>{547956a2-148f-43b1-8c07-673a815675fa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +63,9 @@
     <ClCompile Include="Constantes.h">
       <Filter>Archivos de encabezado</Filter>
     </ClCompile>
+    <ClCompile Include="DtInscripcion.cpp">
+      <Filter>Archivos de origen\DataType</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Clase.h">
@@ -97,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="EnumTurno.h">
       <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="DtInscrpcion.h">
+      <Filter>Archivos de encabezado\DataTypes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
