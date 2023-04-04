@@ -66,6 +66,9 @@
     <ClCompile Include="DtInscripcion.cpp">
       <Filter>Archivos de origen\DataType</Filter>
     </ClCompile>
+    <ClCompile Include="DtSocio.cpp">
+      <Filter>Archivos de origen\DataType</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Clase.h">
@@ -96,6 +99,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="DtInscrpcion.h">
+      <Filter>Archivos de encabezado\DataTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="DtSocio.h">
       <Filter>Archivos de encabezado\DataTypes</Filter>
     </ClInclude>
   </ItemGroup>

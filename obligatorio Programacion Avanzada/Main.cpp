@@ -12,7 +12,7 @@ int main()
 	size_t tamano = miLista.size() - a;
 	cout << tamano;
 	*/
-	int dia = -1;
+	/*int dia = -1;
 
 	try
 	{
@@ -24,8 +24,10 @@ int main()
 	}
 	catch (exception& ex) {
 		cerr << "Exception code: " << ex.what();
-	}
-
+	}*/
+	Socio * pepe = new Socio("pepe","51514163");
+	cout << "Cedula de socio: " << pepe->GetNombre() << "\n nombre: " << pepe->GetCi()<<endl;
+	cout << "Ya no se rompe nada";
 	return 0;
 }
 

@@ -135,6 +135,7 @@
     <ClCompile Include="DtEntrenamiento.cpp" />
     <ClCompile Include="DtFecha.cpp" />
     <ClCompile Include="DtInscripcion.cpp" />
+    <ClCompile Include="DtSocio.cpp" />
     <ClCompile Include="DtSpinning.cpp" />
     <ClCompile Include="Entrenamiento.cpp" />
     <ClCompile Include="Inscripcion.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="DtEntrenamiento.h" />
     <ClInclude Include="DtFecha.h" />
     <ClInclude Include="DtInscrpcion.h" />
+    <ClInclude Include="DtSocio.h" />
     <ClInclude Include="DtSpinning.h" />
     <ClInclude Include="Entrenamiento.h" />
     <ClInclude Include="Inscripcion.h" />
