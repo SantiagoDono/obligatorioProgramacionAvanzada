@@ -140,6 +140,7 @@
     <ClCompile Include="Entrenamiento.cpp" />
     <ClCompile Include="Inscripcion.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ServiciosColecciones.cpp" />
     <ClCompile Include="Socio.cpp" />
     <ClCompile Include="Spinning.cpp" />
   </ItemGroup>
@@ -152,15 +153,13 @@
     <ClInclude Include="DtSpinning.h" />
     <ClInclude Include="Entrenamiento.h" />
     <ClInclude Include="Inscripcion.h" />
+    <ClInclude Include="ServiciosColecciones.h" />
     <ClInclude Include="Socio.h" />
     <ClInclude Include="Spinning.h" />
     <ClInclude Include="EnumTurno.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="obligatorio Programacion Avanzada.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

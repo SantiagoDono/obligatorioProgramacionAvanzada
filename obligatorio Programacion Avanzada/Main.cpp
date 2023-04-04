@@ -1,34 +1,63 @@
 // obligatorio Programacion Avanzada.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
 //
+#pragma once
 
 #include <iostream>
 #include "Socio.h"
 #include <list>
+#include "Clase.h"
+#include "Spinning.h"
+#include "Entrenamiento.h"
+#include "ServiciosColecciones.h"
+
 using namespace std;
+
+void agregarInscripcion(
+	string ciSocio,
+	int idClase,
+	DtFecha fecha,
+	list<Socio*>& socios,
+	list<Spinning*>& clasesS,
+	list<Entrenamiento*>& clasesE);
+
+
 int main()
 {
-	/*int a = 2;
-	list<int> miLista = { 1, 2, 3, 4, 5 };
-	size_t tamano = miLista.size() - a;
-	cout << tamano;
-	*/
-	/*int dia = -1;
-
-	try
-	{
-		if (dia < 0 )
-			throw invalid_argument("invalid_argument");
-		else 
-			cout << "exito";
-		
-	}
-	catch (exception& ex) {
-		cerr << "Exception code: " << ex.what();
-	}*/
-	Socio * pepe = new Socio("pepe","51514163");
-	cout << "Cedula de socio: " << pepe->GetNombre() << "\n nombre: " << pepe->GetCi()<<endl;
-	cout << "Ya no se rompe nada";
-	return 0;
+	list<Spinning *> clasesS = list<Spinning*>();
+	list<Entrenamiento *> clasesE = list<Entrenamiento*>();
+	list<Socio *> socios = list<Socio *>();
+	
+	
 }
 
+void agregarInscripcion(
+	string ciSocio, 
+	int idClase, 
+	DtFecha fecha, 
+	list<Socio*> & socios,
+	list<Spinning*>& clasesS, 
+	list<Entrenamiento*>& clasesE) {
 
+	try 
+	{ 
+		bool spinningBool;
+		if (!existeSocio(ciSocio, socios))
+			throw invalid_argument("No existe el socio con ci "+ ciSocio);
+		if (!existeClase(idClase, clasesS, clasesE, spinningBool))
+			throw invalid_argument("No existe la clase con id "+ idClase);
+		if (spinningBool)
+		{
+			Spinning* spinning = GetSpinningById(idClase, clasesS);
+			spinning->InsertarInscripcion(DtInscripcion(fecha, GetDtSocioByCi(ciSocio, socios)));
+		}
+		else 
+		{
+			Entrenamiento* entrenamiento = GetEntrenamientoById(idClase, clasesE);
+			entrenamiento->InsertarInscripcion(DtInscripcion(fecha, GetDtSocioByCi(ciSocio, socios)));
+		}
+	}
+	catch (exception& ex)
+	{
+		cerr << ex.what();
+	}
+}

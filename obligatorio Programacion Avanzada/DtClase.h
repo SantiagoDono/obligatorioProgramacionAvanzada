@@ -1,7 +1,12 @@
+#pragma once
+
+#ifndef DTCLASE_H
+#define DTCLASE_H
+
+
 #include <string>
 #include <list>
 #include "EnumTurno.h"
-
 
 using namespace std;
 
@@ -21,3 +26,5 @@ public:
     
     ~DtClase();
 };
+
+#endif // !1

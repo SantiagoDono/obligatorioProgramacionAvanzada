@@ -36,10 +36,6 @@ void Entrenamiento::InsertarInscripcion(DtInscripcion inscripcion) {
 		//Hay que manejar dtinscrpcion en este caso?
 		if (Cupo() == 0)
 			throw invalid_argument("No hay cupo disponible.");
-		/*
-		throw invalid_argument refiere al tipo? 
-		en mensaje ponemos algo que queramos o va "invalid_argument"?
-		*/
 
 		list<Inscripcion*> listaNueva = this->GetInscripciones();
 		listaNueva.push_back(new Inscripcion(inscripcion.GetFecha(), inscripcion.GetSocio()));
@@ -49,12 +45,6 @@ void Entrenamiento::InsertarInscripcion(DtInscripcion inscripcion) {
 		}
 
 		this->SetInscripciones(listaNueva);
-
-		/*
-		Hay que borrar memoria de la lista vieja? 
-		con la l�nea 42,se copia como un array de punteros?
-		No pide explicitamente memoria para los punteros a inscripcio�n
-		*/
 	}
 	catch (exception& ex) 
 	{

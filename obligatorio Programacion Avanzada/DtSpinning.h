@@ -1,4 +1,9 @@
 #pragma once
+
+#ifndef DTSPINNING_H
+#define DTSPINNING_H
+
+
 #include "EnumTurno.h"
 #include "DtClase.h"
 #include <string>
@@ -23,3 +28,5 @@ class DtSpinning : DtClase
 
 };
 
+
+#endif // !DTSPINNING_H

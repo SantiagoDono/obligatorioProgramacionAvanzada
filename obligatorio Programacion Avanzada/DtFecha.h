@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef DTFECHA_H
+#define DTFECHA_H
+
 class DtFecha
 {
 	private:
@@ -19,4 +22,5 @@ class DtFecha
 		~DtFecha();
 };
 
+#endif
 

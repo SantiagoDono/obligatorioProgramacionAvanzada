@@ -1,3 +1,8 @@
+#pragma once
+
+#ifndef DTENTRENAMIENTO_H
+#define DTENTRENAMIENTO_H
+
 #include "DtClase.h"
 
 class DtEntrenamiento : DtClase 
@@ -15,3 +20,5 @@ class DtEntrenamiento : DtClase
 
 		~DtEntrenamiento();
 };
+
+#endif // !DTENTRENAMIENTO_H

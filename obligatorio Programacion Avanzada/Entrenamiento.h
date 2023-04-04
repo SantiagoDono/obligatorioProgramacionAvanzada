@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef ENTRENAMIENTO_H
+#define ENTRENAMIENTO_H
+
 #include "Clase.h"
 #include "DtInscrpcion.h"
 
@@ -31,3 +35,4 @@ class Entrenamiento :public Clase
 		~Entrenamiento();
 };
 
+#endif

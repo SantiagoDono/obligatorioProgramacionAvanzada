@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Spinning.h"
 #include "Constantes.h"
 
@@ -29,13 +31,8 @@ int Spinning::Cupo() {
 void Spinning::InsertarInscripcion(DtInscripcion inscripcion) {
 	try
 	{
-		//Hay que manejar dtinscrpcion en este caso?
 		if (Cupo() == 0)
 			throw invalid_argument("No hay cupo disponible.");
-		/*
-		throw invalid_argument refiere al tipo? 
-		en mensaje ponemos algo que queramos o va "invalid_argument"?
-		*/
 
 		list<Inscripcion*> listaNueva = this->GetInscripciones();
 		listaNueva.push_back(new Inscripcion(inscripcion.GetFecha(), inscripcion.GetSocio()));
@@ -45,12 +42,6 @@ void Spinning::InsertarInscripcion(DtInscripcion inscripcion) {
 		}
 
 		this->SetInscripciones(listaNueva);
-
-		/*
-		Hay que borrar memoria de la lista vieja? 
-		con la l�nea 42,se copia como un array de punteros?
-		No pide explicitamente memoria para los punteros a inscripcio�n
-		*/
 	}
 	catch (exception& ex) 
 	{
@@ -58,10 +49,4 @@ void Spinning::InsertarInscripcion(DtInscripcion inscripcion) {
 	}
 }
 
-//Destructor
-Spinning::~Spinning(){
-	/*	this->~Clase(); 
-		Preguntar: cuando se destruyen las clases hijas, 
-		hay que destruir al padre?
-	*/
-}
+Spinning::~Spinning(){}

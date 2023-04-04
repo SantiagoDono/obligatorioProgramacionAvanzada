@@ -1,4 +1,8 @@
 #include <string>
+
+#ifndef CONSTANTES_H
+#define CONSTANTES_H
+
 using namespace std;
 
 const int MAX_SOCIOS = 0;
@@ -17,3 +21,5 @@ const string SIN_NOMBRE = "Unnamed";
 const string SIN_CI = "Undocumented";
 
 const bool EN_RAMBLA_DEFAULT = false;
+
+#endif

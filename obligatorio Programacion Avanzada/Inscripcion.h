@@ -1,8 +1,13 @@
+#pragma once
+
+#ifndef INSCRIPCION_H
+#define INSCRIPCION_H
+
 #include "DtFecha.h"
 #include "DtSocio.h"
 #include "Socio.h"
 
-#pragma once
+
 class Inscripcion
 {	
 	private:
@@ -20,3 +25,4 @@ class Inscripcion
 		~Inscripcion();
 };
 
+#endif

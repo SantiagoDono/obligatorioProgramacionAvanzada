@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef CLASE_H
+#define CLASE_H
+
 #include<iostream>
 #include<stdio.h>
 #include<list>
@@ -9,35 +13,40 @@ using namespace std;
 
 class Clase
 {
-	private:
-		//atributos
-		int _id;
-		string _nombre;
-		enumTurno _turno;
+private:
+	//atributos
+	int _id;
+	string _nombre;
+	enumTurno _turno;
 
-		//pseudoatrr
-		list<Inscripcion *> _inscripciones; 
+	//pseudoatrr
+	list<Inscripcion*> _inscripciones;
 
-	public:
-		Clase();
-		Clase(int id, string nombre, enumTurno turno, list<Inscripcion*>  inscripciones);
+public:
+	Clase();
+	Clase(int id, string nombre, enumTurno turno, list<Inscripcion*>  inscripciones);
 
-		//getters
-		int GetId();
-		string GetNombre();
-		enumTurno GetTurno();
-		list<Inscripcion *> GetInscripciones();
+	//getters
+	int GetId();
+	string GetNombre();
+	enumTurno GetTurno();
+	list<Inscripcion*> GetInscripciones();
 
-		//setters
-		void SetId(int id);
-		void SetNombre(string nombre);
-		void SetTurno(enumTurno turno);
-		void SetInscripciones(list<Inscripcion *> inscripciones);
-		
-		virtual int Cupo()=0;//esto se hace para indicar que no va a haber instancias de esta clase 
-		virtual void InsertarInscripcion(Inscripcion * inscripcion)=0;
+	//setters
+	void SetId(int id);
+	void SetNombre(string nombre);
+	void SetTurno(enumTurno turno);
+	void SetInscripciones(list<Inscripcion*> inscripciones);
 
-		//destructor
-		~Clase();
+	virtual int Cupo() = 0;//esto se hace para indicar que no va a haber instancias de esta clase 
+	virtual void InsertarInscripcion(Inscripcion* inscripcion) = 0;
+
+	//destructor
+	~Clase();
 };
+
+
+
+#endif // !"CLASE_H"
+
 

@@ -1,4 +1,10 @@
 #pragma once
+
+#ifndef SPINNING_H
+#define SPINNING_H
+
+
+
 #include "Clase.h"
 #include "DtInscrpcion.h"
 
@@ -30,3 +36,4 @@ class Spinning : public Clase
 		~Spinning();
 };
 
+#endif // !SPINNING_H
