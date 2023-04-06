@@ -5,9 +5,10 @@
 
 #include<iostream>
 #include<stdio.h>
-#include<list>
-#include"EnumTurno.h"
-#include"Inscripcion.h"
+#include "Constantes.h"
+#include "EnumTurno.h"
+#include "Inscripcion.h"
+#include "DtInscrpcion.h"
 
 using namespace std;
 
@@ -18,28 +19,32 @@ private:
 	int _id;
 	string _nombre;
 	enumTurno _turno;
+	int _cantInscripciones;
 
 	//pseudoatrr
-	list<Inscripcion*> _inscripciones;
+	Inscripcion*  _inscripciones[MAX_INSCRIPCIONES];
+	
 
 public:
 	Clase();
-	Clase(int id, string nombre, enumTurno turno, list<Inscripcion*>  inscripciones);
+	Clase(int id, string nombre, enumTurno turno, Inscripcion* inscripciones[MAX_INSCRIPCIONES], int cantInscripciones);
 
 	//getters
 	int GetId();
 	string GetNombre();
 	enumTurno GetTurno();
-	list<Inscripcion*> GetInscripciones();
+	Inscripcion ** GetInscripciones();
+	int GetCantInscripciones();
 
 	//setters
 	void SetId(int id);
 	void SetNombre(string nombre);
 	void SetTurno(enumTurno turno);
-	void SetInscripciones(list<Inscripcion*> inscripciones);
+	void SetInscripciones(Inscripcion* inscripciones[MAX_INSCRIPCIONES],int cantInscripciones);
+	void SetCantInscripciones(int cantInscripciones);
 
 	virtual int Cupo() = 0;//esto se hace para indicar que no va a haber instancias de esta clase 
-	virtual void InsertarInscripcion(Inscripcion* inscripcion) = 0;
+	virtual void InsertarInscripcion(DtInscripcion inscripcion) = 0;
 
 	//destructor
 	~Clase();

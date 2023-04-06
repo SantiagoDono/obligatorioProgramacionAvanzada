@@ -4,14 +4,14 @@
 
 #include <iostream>
 #include "Socio.h"
-#include <list>
 #include "Clase.h"
 #include "Spinning.h"
 #include "Entrenamiento.h"
 #include "ServiciosColecciones.h"
+#include "Impresiones.h"
 
 using namespace std;
-
+/*
 void agregarInscripcion(
 	string ciSocio,
 	int idClase,
@@ -19,17 +19,38 @@ void agregarInscripcion(
 	list<Socio*>& socios,
 	list<Spinning*>& clasesS,
 	list<Entrenamiento*>& clasesE);
-
+*/
 
 int main()
 {
-	list<Spinning *> clasesS = list<Spinning*>();
-	list<Entrenamiento *> clasesE = list<Entrenamiento*>();
-	list<Socio *> socios = list<Socio *>();
-	
-	
-}
 
+	DtSocio dtSocio = DtSocio("123456-7", "Pepe Perez");
+	DtSocio dtSocio2 = DtSocio("123458-9", "Marco Marconi");
+	DtFecha dtFecha = DtFecha();
+	Inscripcion* ins = new Inscripcion(dtFecha, dtSocio);
+	Inscripcion* array[MAX_INSCRIPCIONES];
+	array[0] = ins;
+	ins = new Inscripcion(dtFecha, dtSocio2);
+	array[1] = ins;
+
+	Entrenamiento * entrenamiento = new Entrenamiento(false ,1, "nombre", Manana, array, 2);
+	
+	DtEntrenamiento dtEntrenamiento = DtEntrenamiento(
+		entrenamiento->GetEnRambla(),
+		entrenamiento->GetId(),
+		entrenamiento->GetNombre(),
+		entrenamiento->GetCantInscripciones(),
+		entrenamiento->GetTurno());
+
+	cout << dtEntrenamiento << endl;
+
+	for (int i = 0; i < min(MAX_INSCRIPCIONES, entrenamiento->GetCantInscripciones()); i++) {
+		cout << entrenamiento->GetInscripciones()[i]->GetFecha();
+		cout << entrenamiento->GetInscripciones()[i]->GetSocio() << endl;
+	}
+	cout << entrenamiento->Cupo();
+}
+/*
 void agregarInscripcion(
 	string ciSocio, 
 	int idClase, 
@@ -61,3 +82,4 @@ void agregarInscripcion(
 		cerr << ex.what();
 	}
 }
+*/

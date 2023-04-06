@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class DtSpinning : DtClase
+class DtSpinning : public DtClase
 {
 	private:
 		int _cantBicicletas;
@@ -19,6 +19,7 @@ class DtSpinning : DtClase
 			int cantBicicletas,
 			int id,
 			string nombre,
+			int cantInscripciones,
 			enumTurno turno
 		);
 

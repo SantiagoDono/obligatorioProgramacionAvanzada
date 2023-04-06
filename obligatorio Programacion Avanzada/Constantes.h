@@ -16,7 +16,7 @@ const int ID_NULO = 0;
 const int CUPO_RAMBLA_TRUE = 20;
 const int CUPO_RAMBLA_FALSE = 10;
 const int CANT_MAX_BICICLETAS = 50;
-
+const int MAX_INSCRIPCIONES = 50;
 const string SIN_NOMBRE = "Unnamed";
 const string SIN_CI = "Undocumented";
 

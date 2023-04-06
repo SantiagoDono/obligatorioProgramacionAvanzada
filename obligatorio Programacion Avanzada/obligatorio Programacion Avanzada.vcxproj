@@ -138,6 +138,7 @@
     <ClCompile Include="DtSocio.cpp" />
     <ClCompile Include="DtSpinning.cpp" />
     <ClCompile Include="Entrenamiento.cpp" />
+    <ClCompile Include="Impresiones.cpp" />
     <ClCompile Include="Inscripcion.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="ServiciosColecciones.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="DtSocio.h" />
     <ClInclude Include="DtSpinning.h" />
     <ClInclude Include="Entrenamiento.h" />
+    <ClInclude Include="Impresiones.h" />
     <ClInclude Include="Inscripcion.h" />
     <ClInclude Include="ServiciosColecciones.h" />
     <ClInclude Include="Socio.h" />

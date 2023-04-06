@@ -5,7 +5,7 @@
 
 #include "DtClase.h"
 
-class DtEntrenamiento : DtClase 
+class DtEntrenamiento : public DtClase 
 {
 	private:
 		bool _enRambla;
@@ -14,6 +14,7 @@ class DtEntrenamiento : DtClase
 			bool enRambla,
 			int id,
 			string nombre,
+			int cantInscripciones,
 			enumTurno turno);
 
 		bool GetEnRambla();

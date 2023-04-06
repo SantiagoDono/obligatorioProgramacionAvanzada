@@ -16,14 +16,16 @@ private:
     int _id;
     string _nombre;
     enumTurno _turno;
+    int _cantInscripciones;
 
 public:
-    DtClase(int  id, string nombre, enumTurno turno);
+    DtClase(int  id, string nombre, enumTurno turno, int cantInscripciones);
 
     int GetId();
     string GetNombre();
     enumTurno GetTurno();
-    
+    int GetCantInscripciones();
+
     ~DtClase();
 };
 

@@ -21,7 +21,8 @@ class Spinning : public Clase
 			int id,
 			string nombre,
 			enumTurno turno,
-			list<Inscripcion*> inscripciones);
+			Inscripcion* inscripciones[MAX_INSCRIPCIONES],
+			int cantInscrp);
 
 		//Getters
 		int GetCantBicicletas();

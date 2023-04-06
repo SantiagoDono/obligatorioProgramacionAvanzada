@@ -1,5 +1,6 @@
 #include "DtSocio.h"
 #include "Constantes.h"
+#include <ostream>
 
 DtSocio::DtSocio() {
     this->_ci = SIN_CI;
@@ -16,4 +17,5 @@ string DtSocio::GetCi() {
 string DtSocio::GetNombre() {
     return _nombre;
 }
+
 DtSocio::~DtSocio() {}

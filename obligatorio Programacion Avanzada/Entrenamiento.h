@@ -4,6 +4,7 @@
 #define ENTRENAMIENTO_H
 
 #include "Clase.h"
+#include "Constantes.h"
 #include "DtInscrpcion.h"
 
 class Entrenamiento :public Clase
@@ -19,7 +20,8 @@ class Entrenamiento :public Clase
 			int id, 
 			string nombre, 
 			enumTurno turno, 
-			list<Inscripcion*> inscripciones);
+			Inscripcion* inscripciones[MAX_INSCRIPCIONES],
+			int cantInscrp);
 
 		//Getters
 		bool GetEnRambla();

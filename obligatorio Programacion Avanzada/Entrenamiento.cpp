@@ -10,8 +10,9 @@ Entrenamiento::Entrenamiento(
 	int id, 
 	string nombre, 
 	enumTurno turno, 
-	list<Inscripcion*> inscripciones) 
-	: Clase(id, nombre, turno, inscripciones)
+	Inscripcion* inscripciones[MAX_INSCRIPCIONES],
+	int cantInscrp)
+	: Clase(id, nombre, turno, inscripciones, cantInscrp)
 {
 	this->_enRambla = enRambla;
 }
@@ -26,25 +27,22 @@ void Entrenamiento::SetEnRambla(bool enRambla) {
 //Operaciones
 int Entrenamiento::Cupo() {
 	if (this->_enRambla)
-		return CUPO_RAMBLA_TRUE - (int)this->GetInscripciones().size();
+		return CUPO_RAMBLA_TRUE - this->GetCantInscripciones();
 	else
-		return CUPO_RAMBLA_FALSE - (int)this->GetInscripciones().size();
+		return CUPO_RAMBLA_FALSE - this->GetCantInscripciones();
 }
+
 void Entrenamiento::InsertarInscripcion(DtInscripcion inscripcion) {
 	try
 	{
-		//Hay que manejar dtinscrpcion en este caso?
 		if (Cupo() == 0)
 			throw invalid_argument("No hay cupo disponible.");
 
-		list<Inscripcion*> listaNueva = this->GetInscripciones();
-		listaNueva.push_back(new Inscripcion(inscripcion.GetFecha(), inscripcion.GetSocio()));
-
-		for (Inscripcion* ins : this->GetInscripciones()) {
-			delete ins;
-		}
-
-		this->SetInscripciones(listaNueva);
+		Inscripcion ** inscripciones = this->GetInscripciones();
+		inscripciones[this->GetCantInscripciones()] = new Inscripcion(inscripcion.GetFecha(), inscripcion.GetSocio());
+		
+		this->SetInscripciones(inscripciones, GetCantInscripciones() + 1);
+		this->SetCantInscripciones(GetCantInscripciones() + 1);
 	}
 	catch (exception& ex) 
 	{

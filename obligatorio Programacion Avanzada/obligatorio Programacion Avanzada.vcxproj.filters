@@ -69,6 +69,12 @@
     <ClCompile Include="DtSocio.cpp">
       <Filter>Archivos de origen\DataType</Filter>
     </ClCompile>
+    <ClCompile Include="ServiciosColecciones.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Impresiones.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Clase.h">
@@ -104,15 +110,16 @@
     <ClInclude Include="DtSocio.h">
       <Filter>Archivos de encabezado\DataTypes</Filter>
     </ClInclude>
+    <ClInclude Include="ServiciosColecciones.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Impresiones.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="obligatorio Programacion Avanzada.rc">
       <Filter>Archivos de recursos</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="makefile">
-      <Filter>Archivos de recursos</Filter>
-    </None>
   </ItemGroup>
 </Project>

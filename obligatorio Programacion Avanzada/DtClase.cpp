@@ -2,11 +2,12 @@
 
 using namespace std;
 
-DtClase::DtClase(int  id, string nombre, enumTurno turno)
+DtClase::DtClase(int  id, string nombre, enumTurno turno, int cantInscripciones)
 {
     this->_id = id;
     this->_nombre = nombre;
     this->_turno = turno;
+    this->_cantInscripciones = cantInscripciones;
 }
 
 int DtClase::GetId() {
@@ -17,6 +18,9 @@ string DtClase::GetNombre() {
 }
 enumTurno DtClase::GetTurno() {
     return _turno;
+}
+int DtClase::GetCantInscripciones() {
+    return _cantInscripciones;
 }
 
 DtClase::~DtClase() {}
