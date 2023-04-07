@@ -22,12 +22,12 @@ private:
 	int _cantInscripciones;
 
 	//pseudoatrr
-	Inscripcion*  _inscripciones[MAX_INSCRIPCIONES];
+	Inscripcion* _inscripciones[MAX_INSCRIPCIONES]{};
 	
 
 public:
 	Clase();
-	Clase(int id, string nombre, enumTurno turno, Inscripcion* inscripciones[MAX_INSCRIPCIONES], int cantInscripciones);
+	Clase(int id, string nombre, enumTurno turno, int cantInscripciones);
 
 	//getters
 	int GetId();

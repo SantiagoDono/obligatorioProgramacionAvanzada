@@ -7,15 +7,12 @@ Clase::Clase(){
 	this->_turno = Manana;
 	this->_cantInscripciones = 0;
 }
-Clase::Clase(int id, string nombre, enumTurno turno, Inscripcion* inscripciones[MAX_INSCRIPCIONES], int cantInscripciones)
+Clase::Clase(int id, string nombre, enumTurno turno, int cantInscripciones)
 {
 	this->_id = id;
 	this->_nombre = nombre;
 	this->_turno = turno;
 	this->_cantInscripciones = cantInscripciones;
-	for (int i = 0; i < min(MAX_INSCRIPCIONES, cantInscripciones); i++) {
-		this->_inscripciones[i] = inscripciones[i];
-	}
 }
 
 int Clase::GetId()

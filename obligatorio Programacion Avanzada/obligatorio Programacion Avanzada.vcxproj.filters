@@ -69,7 +69,7 @@
     <ClCompile Include="DtSocio.cpp">
       <Filter>Archivos de origen\DataType</Filter>
     </ClCompile>
-    <ClCompile Include="ServiciosColecciones.cpp">
+    <ClCompile Include="Sistema.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Impresiones.cpp">
@@ -110,7 +110,7 @@
     <ClInclude Include="DtSocio.h">
       <Filter>Archivos de encabezado\DataTypes</Filter>
     </ClInclude>
-    <ClInclude Include="ServiciosColecciones.h">
+    <ClInclude Include="Sistema.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Impresiones.h">

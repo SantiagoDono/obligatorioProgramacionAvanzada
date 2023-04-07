@@ -9,10 +9,9 @@ Entrenamiento::Entrenamiento(
 	bool enRambla, 
 	int id, 
 	string nombre, 
-	enumTurno turno, 
-	Inscripcion* inscripciones[MAX_INSCRIPCIONES],
+	enumTurno turno,
 	int cantInscrp)
-	: Clase(id, nombre, turno, inscripciones, cantInscrp)
+	: Clase(id, nombre, turno, cantInscrp)
 {
 	this->_enRambla = enRambla;
 }

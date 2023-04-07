@@ -20,7 +20,6 @@ class Entrenamiento :public Clase
 			int id, 
 			string nombre, 
 			enumTurno turno, 
-			Inscripcion* inscripciones[MAX_INSCRIPCIONES],
 			int cantInscrp);
 
 		//Getters

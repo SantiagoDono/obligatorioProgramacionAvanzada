@@ -7,79 +7,115 @@
 #include "Clase.h"
 #include "Spinning.h"
 #include "Entrenamiento.h"
-#include "ServiciosColecciones.h"
 #include "Impresiones.h"
+#include "Sistema.h"
 
 using namespace std;
-/*
-void agregarInscripcion(
-	string ciSocio,
-	int idClase,
-	DtFecha fecha,
-	list<Socio*>& socios,
-	list<Spinning*>& clasesS,
-	list<Entrenamiento*>& clasesE);
-*/
+
+void Manejador(int& entrada, Sistema& sys);
+void agregarSocio(string ci, string nombre);
+void agregarInscripcion(string ciSocio, int idClase, DtFecha fecha, Sistema& sys);
 
 int main()
 {
+	Sistema sistema = Sistema();
+	int entrada = 0;
 
-	DtSocio dtSocio = DtSocio("123456-7", "Pepe Perez");
-	DtSocio dtSocio2 = DtSocio("123458-9", "Marco Marconi");
-	DtFecha dtFecha = DtFecha();
-	Inscripcion* ins = new Inscripcion(dtFecha, dtSocio);
-	Inscripcion* array[MAX_INSCRIPCIONES];
-	array[0] = ins;
-	ins = new Inscripcion(dtFecha, dtSocio2);
-	array[1] = ins;
-
-	Entrenamiento * entrenamiento = new Entrenamiento(false ,1, "nombre", Manana, array, 2);
-	
-	DtEntrenamiento dtEntrenamiento = DtEntrenamiento(
-		entrenamiento->GetEnRambla(),
-		entrenamiento->GetId(),
-		entrenamiento->GetNombre(),
-		entrenamiento->GetCantInscripciones(),
-		entrenamiento->GetTurno());
-
-	cout << dtEntrenamiento << endl;
-
-	for (int i = 0; i < min(MAX_INSCRIPCIONES, entrenamiento->GetCantInscripciones()); i++) {
-		cout << entrenamiento->GetInscripciones()[i]->GetFecha();
-		cout << entrenamiento->GetInscripciones()[i]->GetSocio() << endl;
+	while (entrada != 6) {
+		cout << "---- Menu ----" << endl;
+		cout << "1: Agregar socio" << endl;
+		cout << "2: Agregar clase" << endl;
+		cout << "4: Agregar inscripcion" << endl;
+		cout << "5: Borrar inscripcion" << endl;
+		cout << "6: Salir" << endl;
+		cout << "--------------" << endl;
+		cout << endl << "Ingrese opcion: ";
+		
+		Manejador(entrada, sistema);
 	}
-	cout << entrenamiento->Cupo();
+	return 0;
 }
-/*
-void agregarInscripcion(
-	string ciSocio, 
-	int idClase, 
-	DtFecha fecha, 
-	list<Socio*> & socios,
-	list<Spinning*>& clasesS, 
-	list<Entrenamiento*>& clasesE) {
 
+void Manejador(int& entrada, Sistema& sys) {
+	cin >> entrada;
+	string nombre, cedula;
+	int idClase, dia, mes, anio;
+	switch (entrada) {
+	case 1:
+		cout << "---- 1: Agregar socio ----" << endl;
+		cout << "Ingrese nombre: ";
+		cin >> nombre;
+		cout << "Ingrese cedula: ";
+		cin >> cedula;
+
+		agregarSocio(cedula, nombre);
+		
+		cout << endl;
+		break;
+	case 2:
+		// Preguntar si spinning o entrenamiento
+		cout << endl;
+		break;
+	case 3:
+		cout << endl;
+		break;
+	case 4:
+		cout << "---- 4: Agregar inscripcion ----" << endl;
+		cout << "Ingrese cedula de socio: ";
+		cin >> cedula;
+		cout << "Ingrese id de clase: ";
+		cin >> idClase;
+		cout << "Ingrese fecha de inscripcion" << endl << "Dia: ";
+		cin >> dia;
+		cout << "Mes: ";
+		cin >> mes;
+		cout << "Anio: ";
+		cin >> anio;
+
+		agregarInscripcion(cedula, idClase, DtFecha(dia, mes, anio), sys);
+
+		cout << endl;
+		break;
+	case 5:
+		cout << endl;
+		break;
+	case 6:
+		cout << "Gracias por utilizar el sistema.";
+		break;
+	default:
+		cout << "La opcion " << entrada << " no esta disponible." << endl;
+		cout << "Por favor, ingrese una opcion correcta" << endl << endl;
+	}
+}
+
+void agregarSocio(string ci, string nombre) {
 	try 
-	{ 
-		bool spinningBool;
-		if (!existeSocio(ciSocio, socios))
-			throw invalid_argument("No existe el socio con ci "+ ciSocio);
-		if (!existeClase(idClase, clasesS, clasesE, spinningBool))
-			throw invalid_argument("No existe la clase con id "+ idClase);
-		if (spinningBool)
-		{
-			Spinning* spinning = GetSpinningById(idClase, clasesS);
-			spinning->InsertarInscripcion(DtInscripcion(fecha, GetDtSocioByCi(ciSocio, socios)));
-		}
-		else 
-		{
-			Entrenamiento* entrenamiento = GetEntrenamientoById(idClase, clasesE);
-			entrenamiento->InsertarInscripcion(DtInscripcion(fecha, GetDtSocioByCi(ciSocio, socios)));
-		}
-	}
-	catch (exception& ex)
 	{
-		cerr << ex.what();
+		throw invalid_argument("Ya existe el socio");
+	}
+	catch (exception& ex) 
+	{
+		cerr << "No se pudo crear el socio." << endl << ex.what() << endl;
 	}
 }
-*/
+void agregarInscripcion(string ciSocio, int idClase, DtFecha fecha, Sistema& sys) {
+	try
+	{
+		bool spinning;
+		if (!sys.existeSocio(ciSocio))
+			throw invalid_argument("No existe el usuario con C.I.: " + ciSocio);
+		if (!sys.existeClase(idClase, spinning))
+			throw invalid_argument("No existe la clase con ID: " + idClase);
+		
+		DtInscripcion nuevaIns = DtInscripcion(fecha, sys.GetDtSocioByCi(ciSocio));
+
+		if (spinning)
+			sys.insertarInscripcionSpinning(nuevaIns, sys.GetSpinningById(idClase));
+		else
+			sys.insertarInscripcionEntrenamiento(nuevaIns, sys.GetEntrenamientoById(idClase));
+	}
+	catch(exception& ex)
+	{
+		cerr << "No se pudo agregar la inscripción." << endl << ex.what() << endl;
+	}
+}
