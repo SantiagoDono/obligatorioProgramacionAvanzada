@@ -13,10 +13,11 @@
 using namespace std;
 
 void Manejador(int& entrada, Sistema& sys);
-void agregarSocio(string ci, string nombre);
+void agregarSocio(string ci, string nombre, Sistema& sys);
 void agregarInscripcion(string ciSocio, int idClase, DtFecha fecha, Sistema& sys);
 enumTurno elegirTurno();
 void agregarClase( DtClase& clase, Sistema& sys, bool spinning);
+void casosDeTest(Sistema& sys);
 int main()
 {
 	Sistema sistema = Sistema();
@@ -52,7 +53,7 @@ void Manejador(int& entrada, Sistema& sys) {
 		cout << "Ingrese cedula: ";
 		cin >> cedula;
 
-		agregarSocio(cedula, nombre);
+		agregarSocio(cedula, nombre, sys);
 
 		cout << endl;
 		break;
@@ -113,13 +114,15 @@ void Manejador(int& entrada, Sistema& sys) {
 	case 6:
 		cout << "Gracias por utilizar el sistema.";
 		break;
+	case 1111:
+		casosDeTest(sys);
 	default:
 		cout << "La opcion " << entrada << " no esta disponible." << endl;
 		cout << "Por favor, ingrese una opcion correcta" << endl << endl;
 	}
 }
 
-void agregarSocio(string ci, string nombre) {
+void agregarSocio(string ci, string nombre, Sistema& sys) {
 	try 
 	{
 		throw invalid_argument("Ya existe el socio");
@@ -175,10 +178,52 @@ enumTurno elegirTurno() {
 		default:
 			cout << "Ingrese una opcion valida." << endl;
 		}
-
 	}
 }
 
+void casosDeTest(Sistema& sys) {
+	int entrada = 0;
+	while (entrada != 4) {
+		cout << "---- Generacion de casos de test ----" << endl;
+		cout << "1: Ingresar 3 socios de prueba" << endl;
+		cout << "2: Ingresar 2 clases de spinning de prueba" << endl;
+		cout << "3: Ingresar 2 clases de entrenamiento prueba" << endl;
+		cout << "4: Volver" << endl;
+		cout << "Ingrese opcion: ";
+		cin >> entrada;
+		switch (entrada)
+		{
+			case 1:
+				cout << "---- 1: Ingresar 3 socios de prueba ----" << endl;
+				agregarSocio("4.215.368-4", "Martin Loque", sys);
+				agregarSocio("5.835.371-6", "Romina Panca", sys);
+				agregarSocio("3.145.844-1", "Carla Matt", sys);
+
+				cout << "Se agregaron los socios: " << endl;
+				cout << "----------------" << endl;
+				cout << sys.GetDtSocioByCi("4.215.368-4");
+				cout << "----------------" << endl;
+				cout << sys.GetDtSocioByCi("5.835.371-6");
+				cout << "----------------" << endl;
+				cout << sys.GetDtSocioByCi("3.145.844-1");
+				cout << "----------------" << endl;
+				break;
+			case 2: 
+				cout << "No implementado" << endl;
+				break;
+			case 3:
+				cout << "No implementado" << endl;
+				break;
+			case 4:
+				cout << "Finaliza la generacion de casos de test" << endl;
+				break;
+			default:
+				cout << "La opcion " << entrada << " no esta disponible." << endl;
+				cout << "Por favor, ingrese una opcion correcta" << endl << endl;
+				break;
+		}
+	}
+}
 void agregarClase( DtClase& clase, Sistema& sys,bool spinning){
 	int cantBicicletas=0;
 	if (spinning) {
