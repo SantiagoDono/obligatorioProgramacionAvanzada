@@ -118,6 +118,8 @@ void Sistema::insertarInscripcionEntrenamiento(DtInscripcion inscripcion, Entren
 	}
 }
 
+
+
 bool  Sistema::existeSocio(string ciSocio)
 {
 	bool retorno = false;
@@ -154,6 +156,8 @@ bool Sistema::existeClase(int idClase, bool& spinning)
 	}
 	return retorno;
 }
+
+
 
 Sistema::~Sistema() {
 	if (this->_cantSocios > 0)

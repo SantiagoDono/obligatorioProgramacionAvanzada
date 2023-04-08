@@ -1,4 +1,5 @@
 #include <string>
+#include"EnumTurno.h"
 
 #ifndef CONSTANTES_H
 #define CONSTANTES_H
@@ -25,5 +26,6 @@ const int ID_NULO = 0;
 const string SIN_NOMBRE = "Unnamed";
 const string SIN_CI = "Undocumented";
 const bool EN_RAMBLA_DEFAULT = false;
+
 
 #endif

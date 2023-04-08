@@ -30,6 +30,7 @@ class Sistema
 		void insertarEntrenamiento(DtEntrenamiento entrenamiento);
 		void insertarInscripcionSpinning(DtInscripcion inscripcion, Spinning* clase);
 		void insertarInscripcionEntrenamiento(DtInscripcion inscripcion, Entrenamiento* clase);
+		
 
 		bool existeSocio(string ciSocio);
 		bool existeClase(int idClase, bool& spinning);

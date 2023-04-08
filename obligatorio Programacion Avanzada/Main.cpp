@@ -15,7 +15,8 @@ using namespace std;
 void Manejador(int& entrada, Sistema& sys);
 void agregarSocio(string ci, string nombre);
 void agregarInscripcion(string ciSocio, int idClase, DtFecha fecha, Sistema& sys);
-
+enumTurno elegirTurno();
+void agregarClase( DtClase& clase, Sistema& sys, bool spinning);
 int main()
 {
 	Sistema sistema = Sistema();
@@ -38,8 +39,11 @@ int main()
 
 void Manejador(int& entrada, Sistema& sys) {
 	cin >> entrada;
-	string nombre, cedula;
-	int idClase, dia, mes, anio;
+
+	string nombre, cedula, nombreClase;
+	int idClase, dia, mes, anio, tipoClase;
+	enumTurno turno;
+	
 	switch (entrada) {
 	case 1:
 		cout << "---- 1: Agregar socio ----" << endl;
@@ -49,12 +53,39 @@ void Manejador(int& entrada, Sistema& sys) {
 		cin >> cedula;
 
 		agregarSocio(cedula, nombre);
-		
+
 		cout << endl;
 		break;
 	case 2:
-		// Preguntar si spinning o entrenamiento
-		cout << endl;
+		//cout << "---- 2: Agregar clase ----" << endl;
+		//cout << "Especifique que clase quiere agregar:" << endl << "1: Spinning." << endl << "2: Entrenamiento." << endl;
+		//cout << "Ingrese opcion: ";
+		//cin >> tipoClase;
+		//if (tipoClase == 1)
+		//{
+		//	cout << "---- 1: Spinning ----" << endl;
+		//	cout << "Ingrese id de clase: ";
+		//	cin >> idClase;
+		//	cout << "Ingrese nombre de clase: ";
+		//	cin >> nombreClase;
+		//	turno = elegirTurno();
+		//	DtClase clase = DtClase(idClase, nombreClase, turno, 0);
+		//	agregarClase(clase, sys, true);
+		//}
+		//else if (tipoClase == 2) {
+
+		//	//entrenamiento
+		//}
+		//else {
+
+
+		//	cout << "La opcion " << tipoClase << " no esta disponible." << endl;
+		//	cout << "Por favor, ingrese una opcion correcta" << endl << endl;
+
+		//}
+
+
+
 		break;
 	case 3:
 		cout << endl;
@@ -118,4 +149,68 @@ void agregarInscripcion(string ciSocio, int idClase, DtFecha fecha, Sistema& sys
 	{
 		cerr << "No se pudo agregar la inscripción." << endl << ex.what() << endl;
 	}
+
+
 }
+enumTurno elegirTurno() {
+	int opcion=0;
+
+	while (opcion <1 || opcion > 3)
+	{
+		cout << "---- Seleccion de turno ----" << endl;
+		cout << "1: Manana." << endl << "2: Tarde" << endl << "3: Noche" << endl;
+		cout << "Selecciona la opcion: ";
+		cin >> opcion;
+		switch (opcion)
+		{
+		case 1:
+			return Manana;
+			break;
+		case 2:
+			return Tarde;
+			break;
+		case 3:
+			return Noche;
+			break;
+		default:
+			cout << "Ingrese una opcion valida." << endl;
+		}
+
+	}
+}
+
+void agregarClase( DtClase& clase, Sistema& sys,bool spinning){
+	int cantBicicletas=0;
+	if (spinning) {
+		while (cantBicicletas > 50 || cantBicicletas < 1) {
+			cout << "Ingrese cantidad de bicicletas (entre 1 y 50): ";
+			cin >> cantBicicletas;
+			if (cantBicicletas > 50 || cantBicicletas < 1)
+				cout << "Ingresaste un valor incorrecto."<< endl;
+		}
+		try
+		{
+			if (sys.existeClase(clase.GetId(), spinning))
+				throw invalid_argument("La clase ya existe");
+			
+			sys.insertarSpinning(DtSpinning(cantBicicletas,
+				clase.GetId(), 
+				clase.GetNombre(),
+				clase.GetCantInscripciones(),
+				clase.GetTurno()));
+
+			
+
+		}catch (exception& ex)
+		{
+			cerr << "No se pudo agregar la clase." << endl << ex.what() << endl;
+		}
+
+	}
+	else {
+		//entrenamiento 
+
+	}
+
+}
+//hacer funcion tipo clase 

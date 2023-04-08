@@ -2,6 +2,8 @@
 
 using namespace std;
 
+
+
 DtClase::DtClase(int  id, string nombre, enumTurno turno, int cantInscripciones)
 {
     this->_id = id;
