@@ -32,6 +32,7 @@ class Spinning : public Clase
 		//Operaciones
 		int Cupo();
 		void InsertarInscripcion(DtInscripcion inscripcion);
+		bool SocioInscripto(DtSocio socio);
 		//Destructor
 		~Spinning();
 };

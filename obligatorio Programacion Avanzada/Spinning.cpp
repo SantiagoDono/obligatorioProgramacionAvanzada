@@ -33,7 +33,8 @@ void Spinning::InsertarInscripcion(DtInscripcion inscripcion) {
 	{
 		if (Cupo() == 0)
 			throw invalid_argument("No hay cupo disponible.");
-
+		if (SocioInscripto(inscripcion.GetSocio()))
+			throw invalid_argument("El socio, " + inscripcion.GetSocio().GetNombre() + " (" + inscripcion.GetSocio().GetCi() + "), ya esta inscripto a la clase.");
 		Inscripcion** inscripciones = this->GetInscripciones();
 		inscripciones[this->GetCantInscripciones()] = new Inscripcion(inscripcion.GetFecha(), inscripcion.GetSocio());
 
@@ -44,6 +45,19 @@ void Spinning::InsertarInscripcion(DtInscripcion inscripcion) {
 	{
 		cerr << "Error code: " << ex.what();
 	}
+}
+bool Spinning::SocioInscripto(DtSocio socio) {
+	bool retorno = false;
+	if (this->GetCantInscripciones() > 0) {
+		Inscripcion** inscripciones = this->GetInscripciones();
+		for (int i = 0; i < this->GetCantInscripciones(); i++) {
+			if (inscripciones[i]->GetSocio().GetCi() == socio.GetCi()) {
+				retorno = true;
+				break;
+			}
+		}
+	}
+	return retorno;
 }
 
 Spinning::~Spinning(){}

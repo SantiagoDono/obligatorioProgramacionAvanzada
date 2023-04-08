@@ -31,7 +31,7 @@ class Entrenamiento :public Clase
 		//Operaciones
 		int Cupo();
 		void InsertarInscripcion(DtInscripcion inscripcion);
-
+		bool SocioInscripto(DtSocio socio);
 		//Destructor
 		~Entrenamiento();
 };
