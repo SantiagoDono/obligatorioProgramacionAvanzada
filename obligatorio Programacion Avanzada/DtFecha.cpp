@@ -34,8 +34,8 @@ int DtFecha::GetDia() {
 	return _anio;
 }
 bool DtFecha::FechaValida(int dia, int mes, int anio){
-	return dia < MIN_FECHA_DIA || dia > MAX_FECHA_DIA ||
+	return !(dia < MIN_FECHA_DIA || dia > MAX_FECHA_DIA ||
 			mes < MIN_FECHA_MES || mes > MAX_FECHA_MES ||
-			anio < MIN_FECHA_ANIO;
+			anio < MIN_FECHA_ANIO);
 }
 DtFecha::~DtFecha(){}
