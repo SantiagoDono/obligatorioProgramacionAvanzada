@@ -10,9 +10,9 @@ Sistema::Sistema() {
 
 DtSocio Sistema::GetDtSocioByCi(string ci) {
 	DtSocio socio;
-	for (Socio* soc : this->_socios) {
-		if (soc->GetCi() == ci) {
-			socio = DtSocio(soc->GetCi(), soc->GetNombre());
+	for (int i = 0; i < this->_cantSocios; i++) {
+		if (_socios[i]->GetCi() == ci) {
+			socio = DtSocio(_socios[i]->GetCi(), _socios[i]->GetNombre());
 			break;
 		}
 	}
@@ -20,9 +20,9 @@ DtSocio Sistema::GetDtSocioByCi(string ci) {
 }
 Spinning* Sistema::GetSpinningById(int id) {
 	try {
-		for (Spinning* c : this->_spinning) {
-			if (c->GetId() == id) {
-				return c;
+		for (int i = 0; i < this->_cantSpinning; i++) {
+			if (_spinning[i]->GetId() == id) {
+				return _spinning[i];
 			}
 		}
 	}
@@ -33,9 +33,9 @@ Spinning* Sistema::GetSpinningById(int id) {
 Entrenamiento* Sistema::GetEntrenamientoById(int id) {
 	try
 	{
-		for (Entrenamiento* c : this->_entrenamiento) {
-			if (c->GetId() == id) {
-				return c;
+		for (int i = 0; i < this->_cantEntrenamiento; i++) {
+			if (_entrenamiento[i]->GetId() == id) {
+				return _entrenamiento[i];
 			}
 		}
 	}
@@ -66,7 +66,7 @@ void Sistema::insertarSpinning(DtSpinning spinning)
 			throw invalid_argument("Se alcanzó la canidad maxima de clases de spinning del sistema");
 		Spinning* nuevaClase = new Spinning(
 			spinning.GetCantBicicletas(),
-			this->_cantEntrenamiento + this->_cantSpinning + 1,
+			spinning.GetId(),
 			spinning.GetNombre(),
 			spinning.GetTurno(),
 			spinning.GetCantInscripciones());
@@ -85,7 +85,7 @@ void Sistema::insertarEntrenamiento(DtEntrenamiento entrenamiento) {
 			throw invalid_argument("Se alcanzó la canidad maxima de clases de entrenamiento del sistema");
 		Entrenamiento* nuevaClase = new Entrenamiento(
 			entrenamiento.GetEnRambla(),
-			this->_cantEntrenamiento + this->_cantSpinning + 1,
+			entrenamiento.GetId(),
 			entrenamiento.GetNombre(),
 			entrenamiento.GetTurno(),
 			entrenamiento.GetCantInscripciones());
@@ -118,14 +118,12 @@ void Sistema::insertarInscripcionEntrenamiento(DtInscripcion inscripcion, Entren
 	}
 }
 
-
-
 bool  Sistema::existeSocio(string ciSocio)
 {
 	bool retorno = false;
 	if (this->_cantSocios > 0) {
-		for (Socio* socio : this->_socios) {
-			if (socio->GetCi() == ciSocio) {
+		for (int i = 0; i < this->_cantSocios; i++) {
+			if (_socios[i]->GetCi() == ciSocio) {
 				retorno = true;
 				break;
 			}
@@ -137,8 +135,8 @@ bool Sistema::existeClase(int idClase, bool& spinning)
 {
 	bool retorno = false;
 	if (this->_cantSpinning > 0) {
-		for (Spinning* claseS : this->_spinning) {
-			if (claseS->GetId() == idClase) {
+		for (int i = 0; i < this->_cantSpinning; i++) {
+			if (_spinning[i]->GetId() == idClase) {
 				retorno = true;
 				spinning = true;
 				break;
@@ -146,8 +144,8 @@ bool Sistema::existeClase(int idClase, bool& spinning)
 		}
 	}
 	if (!retorno && this->_cantEntrenamiento > 0) {
-		for (Entrenamiento* claseE : this->_entrenamiento) {
-			if (claseE->GetId() == idClase) {
+		for (int i = 0; i < this->_cantEntrenamiento; i++) {
+			if (_entrenamiento[i]->GetId() == idClase) {
 				retorno = true;
 				spinning = false;
 				break;
@@ -156,8 +154,6 @@ bool Sistema::existeClase(int idClase, bool& spinning)
 	}
 	return retorno;
 }
-
-
 
 Sistema::~Sistema() {
 	if (this->_cantSocios > 0)
