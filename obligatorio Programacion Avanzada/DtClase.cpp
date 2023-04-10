@@ -2,7 +2,9 @@
 
 using namespace std;
 
-
+DtClase::DtClase() {
+    
+}
 
 DtClase::DtClase(int  id, string nombre, enumTurno turno, int cantInscripciones)
 {

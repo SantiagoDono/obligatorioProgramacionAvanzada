@@ -50,8 +50,8 @@ ostream& operator<<(ostream& os, DtEntrenamiento entrenamiento) {
     os << "Clase->ID: " << entrenamiento.GetId() << endl;
     os << "Clase->Nombre: " << entrenamiento.GetNombre() << endl;
     os << "Clase->Turno: " << turno << endl;
-    if (entrenamiento.GetEnRambla() == 0)
-        string enRambla = "Sí";
+    if (entrenamiento.GetEnRambla())
+         enRambla = "Si";
     os << "Clase->En rambla?: " << enRambla << endl;
     os << "Clase->Cant. Inscripciones: " << entrenamiento.GetCantInscripciones() << endl;
     return os;

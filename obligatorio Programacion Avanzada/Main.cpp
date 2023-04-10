@@ -18,6 +18,9 @@ void agregarInscripcion(string ciSocio, int idClase, DtFecha fecha, Sistema& sys
 enumTurno elegirTurno();
 void agregarClase( DtClase& clase, Sistema& sys, bool spinning);
 void casosDeTest(Sistema& sys);
+void tipoClase(Sistema& sys);
+void ingresarClase(Sistema& sys, DtClase clase, bool spinning, int cantBicicletas);
+void ingresarClase(Sistema& sys, DtClase clase, bool spinning, bool enRambla);
 int main()
 {
 	Sistema sistema = Sistema();
@@ -37,12 +40,11 @@ int main()
 	}
 	return 0;
 }
-
 void Manejador(int& entrada, Sistema& sys) {
 	cin >> entrada;
 
 	string nombre, cedula, nombreClase;
-	int idClase, dia, mes, anio, tipoClase;
+	int idClase, dia, mes, anio, tipoC;
 	enumTurno turno;
 	
 	switch (entrada) {
@@ -58,35 +60,7 @@ void Manejador(int& entrada, Sistema& sys) {
 		cout << endl;
 		break;
 	case 2:
-		//cout << "---- 2: Agregar clase ----" << endl;
-		//cout << "Especifique que clase quiere agregar:" << endl << "1: Spinning." << endl << "2: Entrenamiento." << endl;
-		//cout << "Ingrese opcion: ";
-		//cin >> tipoClase;
-		//if (tipoClase == 1)
-		//{
-		//	cout << "---- 1: Spinning ----" << endl;
-		//	cout << "Ingrese id de clase: ";
-		//	cin >> idClase;
-		//	cout << "Ingrese nombre de clase: ";
-		//	cin >> nombreClase;
-		//	turno = elegirTurno();
-		//	DtClase clase = DtClase(idClase, nombreClase, turno, 0);
-		//	agregarClase(clase, sys, true);
-		//}
-		//else if (tipoClase == 2) {
-
-		//	//entrenamiento
-		//}
-		//else {
-
-
-		//	cout << "La opcion " << tipoClase << " no esta disponible." << endl;
-		//	cout << "Por favor, ingrese una opcion correcta" << endl << endl;
-
-		//}
-
-
-
+		tipoClase(sys);
 		break;
 	case 3:
 		cout << endl;
@@ -116,6 +90,7 @@ void Manejador(int& entrada, Sistema& sys) {
 		break;
 	case 1111:
 		casosDeTest(sys);
+		break;
 	default:
 		cout << "La opcion " << entrada << " no esta disponible." << endl;
 		cout << "Por favor, ingrese una opcion correcta" << endl << endl;
@@ -198,21 +173,16 @@ void casosDeTest(Sistema& sys) {
 				agregarSocio("4.215.368-4", "Martin Loque", sys);
 				agregarSocio("5.835.371-6", "Romina Panca", sys);
 				agregarSocio("3.145.844-1", "Carla Matt", sys);
-
-				cout << "Se agregaron los socios: " << endl;
-				cout << "----------------" << endl;
-				cout << sys.GetDtSocioByCi("4.215.368-4");
-				cout << "----------------" << endl;
-				cout << sys.GetDtSocioByCi("5.835.371-6");
-				cout << "----------------" << endl;
-				cout << sys.GetDtSocioByCi("3.145.844-1");
-				cout << "----------------" << endl;
 				break;
 			case 2: 
-				cout << "No implementado" << endl;
+				cout << "---- 2: Agregar 2 clases de spinning. ----"<< endl;
+				ingresarClase(sys, DtClase(1, "s1", Manana, 0), true, 25);
+				ingresarClase(sys, DtClase(20, "s20", Tarde, 0), true, 20);
 				break;
 			case 3:
-				cout << "No implementado" << endl;
+				cout << "---- 3: Agregar 2 clases de entrenamiento. ----" << endl;
+				ingresarClase(sys, DtClase(10, "E10", Manana, 0), true, true);
+				ingresarClase(sys, DtClase(11, "E11", Noche, 0), true, false);
 				break;
 			case 4:
 				cout << "Finaliza la generacion de casos de test" << endl;
@@ -233,29 +203,136 @@ void agregarClase( DtClase& clase, Sistema& sys,bool spinning){
 			if (cantBicicletas > 50 || cantBicicletas < 1)
 				cout << "Ingresaste un valor incorrecto."<< endl;
 		}
-		try
-		{
-			if (sys.existeClase(clase.GetId(), spinning))
-				throw invalid_argument("La clase ya existe");
-			
-			sys.insertarSpinning(DtSpinning(cantBicicletas,
-				clase.GetId(), 
-				clase.GetNombre(),
-				clase.GetCantInscripciones(),
-				clase.GetTurno()));
-
-			
-
-		}catch (exception& ex)
-		{
-			cerr << "No se pudo agregar la clase." << endl << ex.what() << endl;
-		}
-
+		ingresarClase(sys, clase, spinning, cantBicicletas);
 	}
 	else {
-		//entrenamiento 
+		//entrenamiento
+		string rambla;
+		while (rambla !="y" && rambla!="Y" && rambla != "n" && rambla != "N")
+		{
 
+			cout << "En rambla? [y/n]: ";//ver como ponerlo mas lindo
+			cin >> rambla;
+			if (rambla == "y" || rambla =="Y")
+			{
+				 ingresarClase(sys, clase, spinning, true);
+
+			}
+			else if(rambla == "n" || rambla == "N")
+			{
+
+				ingresarClase(sys, clase, spinning, false);
+
+			}
+			else {
+				cout << "Por favor ingrese una opcion correcta."<<endl;
+			}
+		}
 	}
 
 }
-//hacer funcion tipo clase 
+void tipoClase(Sistema& sys) {
+
+	string nombreClase;
+	int idClase, tipo=0;
+	enumTurno turno;
+	cout << "---- 2: Agregar clase ----" << endl;
+	while (tipo < 1 || tipo >3) {
+		cout << "Especifique que clase quiere agregar:" << endl << "1: Spinning." << endl << "2: Entrenamiento." << endl;
+		cout << "Ingrese opcion: ";
+		cin >> tipo;
+		if (tipo == 1)
+		{
+			try
+			{
+				cout << "---- 1: Spinning ----" << endl;
+				cout << "Ingrese id de clase: ";
+				cin >> idClase;
+				cout << "Ingrese nombre de clase: ";
+				cin >> nombreClase;
+				turno = elegirTurno();
+				DtClase clase = DtClase(idClase, nombreClase, turno, 0);
+				agregarClase(clase, sys, true);
+
+			}
+			catch (exception& e)
+			{
+				cerr << "Se produjo el erorr: " << e.what() << endl;
+			}
+		}
+		else if (tipo == 2) {
+			try
+			{
+
+				cout << "---- 2: Entrenamiento ----" << endl;
+				cout << "ingrese id de clase: ";
+				cin >> idClase;
+				cout << "Ingrese nombre de clase: ";
+				cin >> nombreClase;
+				turno = elegirTurno();
+				DtClase clase = DtClase(idClase, nombreClase, turno, 0);
+				agregarClase(clase, sys, false);
+			}
+			catch (exception& e)
+			{
+				cerr << "Se produjo el erorr: " << e.what() << endl;
+			}
+		}
+		else {
+
+
+			cout << "La opcion " << tipo << " no esta disponible." << endl;
+			cout << "Por favor, ingrese una opcion correcta" << endl << endl;
+
+		}
+	}
+}
+void ingresarClase(Sistema& sys,DtClase clase,bool spinning,int cantBicicletas) {
+	try
+	{
+		if (sys.existeClase(clase.GetId(), spinning))
+			throw invalid_argument("La clase ya existe");
+
+		sys.insertarSpinning(DtSpinning(cantBicicletas,
+			clase.GetId(),
+			clase.GetNombre(),
+			clase.GetCantInscripciones(),
+			clase.GetTurno()));
+		cout << "Se inserto:" << endl;
+		DtSpinning spin = DtSpinning(sys.GetSpinningById(clase.GetId())->GetCantBicicletas(),
+			sys.GetSpinningById(clase.GetId())->GetId(),
+			sys.GetSpinningById(clase.GetId())->GetNombre(),
+			sys.GetSpinningById(clase.GetId())->GetCantInscripciones(),
+			sys.GetSpinningById(clase.GetId())->GetTurno());
+		cout << spin << endl;
+
+
+	}
+	catch (exception& ex)
+	{
+		cerr << "No se pudo agregar la clase." << endl << ex.what() << endl;
+	}
+}
+void ingresarClase(Sistema& sys, DtClase clase, bool spinning,bool enRambla) {
+	try
+	{
+		if (sys.existeClase(clase.GetId(), spinning))
+			throw invalid_argument("la clase ya existe");
+		sys.insertarEntrenamiento(DtEntrenamiento(enRambla,
+			clase.GetId(),
+			clase.GetNombre(),
+			clase.GetCantInscripciones(),
+			clase.GetTurno()));
+		cout << "Se inserto:" << endl;
+		DtEntrenamiento entre = DtEntrenamiento(sys.GetEntrenamientoById(clase.GetId())->GetEnRambla(),
+			sys.GetEntrenamientoById(clase.GetId())->GetId(),
+			sys.GetEntrenamientoById(clase.GetId())->GetNombre(),
+			sys.GetEntrenamientoById(clase.GetId())->GetCantInscripciones(),
+			sys.GetEntrenamientoById(clase.GetId())->GetTurno());
+		cout << entre << endl;
+	}
+	catch (exception& ex)
+	{
+		cerr << "No se pudo agregar la clase." << endl << ex.what() << endl;
+	}
+}

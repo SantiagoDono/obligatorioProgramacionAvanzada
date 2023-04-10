@@ -20,7 +20,7 @@ private:
     int _cantInscripciones;
 
 public:
-    
+    DtClase();
     DtClase(int  id, string nombre, enumTurno turno, int cantInscripciones);
 
     int GetId();
