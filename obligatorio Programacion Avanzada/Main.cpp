@@ -262,8 +262,18 @@ void tipoClase(Sistema& sys) {
 			try
 			{
 				cout << "---- 1: Spinning ----" << endl;
-				cout << "Ingrese id de clase: ";
-				cin >> idClase;
+				while (true) {
+					cout << "Ingrese id de clase: ";
+					string ingreso;
+					cin >> ingreso;
+					if (isdigit(ingreso[0])) {
+						idClase = stoi(ingreso);
+						break;
+					}
+					else {
+						cerr << "El valor ingresado no es un numero. Intente de nuevo." << endl;
+					}
+				}
 				cout << "Ingrese nombre de clase: ";
 				cin >> nombreClase;
 				turno = elegirTurno();
