@@ -5,7 +5,7 @@
 
 #include "Clase.h"
 #include "Constantes.h"
-#include "DtInscrpcion.h"
+#include "DtInscripcion.h"
 
 class Entrenamiento :public Clase
 {
@@ -32,6 +32,8 @@ class Entrenamiento :public Clase
 		int Cupo();
 		void InsertarInscripcion(DtInscripcion inscripcion);
 		bool SocioInscripto(DtSocio socio);
+		bool ExisteInscripcionByCi(string ci);
+		DtInscripcion GetInscripcionByCiSocio(string ci);
 		//Destructor
 		~Entrenamiento();
 };

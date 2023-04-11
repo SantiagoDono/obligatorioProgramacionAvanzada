@@ -149,7 +149,7 @@
     <ClInclude Include="Clase.h" />
     <ClInclude Include="DtEntrenamiento.h" />
     <ClInclude Include="DtFecha.h" />
-    <ClInclude Include="DtInscrpcion.h" />
+    <ClInclude Include="DtInscripcion.h" />
     <ClInclude Include="DtSocio.h" />
     <ClInclude Include="DtSpinning.h" />
     <ClInclude Include="Entrenamiento.h" />

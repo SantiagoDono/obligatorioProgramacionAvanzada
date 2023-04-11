@@ -21,7 +21,7 @@ DtFecha::DtFecha(int dia, int mes, int anio)
 		this->_anio = anio;
 	}
 	catch (exception& ex) {
-		cerr << "Invalid argument: " << ex.what();
+		cerr << "Invalid argument: " << ex.what()<< endl;
 	}
 }
 int DtFecha::GetAnio() {
@@ -31,7 +31,7 @@ int DtFecha::GetMes() {
 	return _mes;
 }
 int DtFecha::GetDia() {
-	return _anio;
+	return _dia;
 }
 bool DtFecha::FechaValida(int dia, int mes, int anio){
 	return !(dia < MIN_FECHA_DIA || dia > MAX_FECHA_DIA ||

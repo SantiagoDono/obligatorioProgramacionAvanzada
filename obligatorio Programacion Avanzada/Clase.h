@@ -8,7 +8,7 @@
 #include "Constantes.h"
 #include "EnumTurno.h"
 #include "Inscripcion.h"
-#include "DtInscrpcion.h"
+#include "DtInscripcion.h"
 
 using namespace std;
 
@@ -46,6 +46,8 @@ public:
 	virtual int Cupo() = 0;//esto se hace para indicar que no va a haber instancias de esta clase 
 	virtual void InsertarInscripcion(DtInscripcion inscripcion) = 0;
 	virtual bool SocioInscripto(DtSocio socio) = 0;
+	virtual bool ExisteInscripcionByCi(string ci) = 0;
+	virtual DtInscripcion GetInscripcionByCiSocio(string ci)=0;
 	//destructor
 	~Clase();
 };

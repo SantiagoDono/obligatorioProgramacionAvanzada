@@ -19,6 +19,15 @@ Entrenamiento::Entrenamiento(
 bool Entrenamiento::GetEnRambla() {
 	return _enRambla;
 }
+DtInscripcion Entrenamiento::GetInscripcionByCiSocio(string ci) {
+	for (int i = 0; i < this->GetCantInscripciones(); i++)
+	{
+		if (this->GetInscripciones()[i]->GetSocio().GetCi() == ci)
+		{
+			return DtInscripcion(this->GetInscripciones()[i]->GetFecha(), this->GetInscripciones()[i]->GetSocio());
+		}
+	}
+}
 //Setters
 void Entrenamiento::SetEnRambla(bool enRambla) {
 	this->_enRambla = enRambla;
@@ -58,6 +67,18 @@ bool Entrenamiento::SocioInscripto(DtSocio socio) {
 				retorno = true;
 				break;
 			}
+		}
+	}
+	return retorno;
+}
+bool Entrenamiento::ExisteInscripcionByCi(string ci) {
+	bool retorno = false;
+	for (int i = 0; i < this->GetCantInscripciones(); i++)
+	{
+		if (this->GetInscripciones()[i]->GetSocio().GetCi() == ci )
+		{
+			retorno = true;
+			break;
 		}
 	}
 	return retorno;

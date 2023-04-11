@@ -6,7 +6,7 @@
 
 
 #include "Clase.h"
-#include "DtInscrpcion.h"
+#include "DtInscripcion.h"
 
 class Spinning : public Clase
 {
@@ -33,6 +33,8 @@ class Spinning : public Clase
 		int Cupo();
 		void InsertarInscripcion(DtInscripcion inscripcion);
 		bool SocioInscripto(DtSocio socio);
+		DtInscripcion GetInscripcionByCiSocio(string ci);
+		bool ExisteInscripcionByCi(string ci);
 		//Destructor
 		~Spinning();
 };

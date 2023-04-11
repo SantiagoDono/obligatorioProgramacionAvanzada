@@ -1,4 +1,4 @@
-#include "DtInscrpcion.h"
+#include "DtInscripcion.h"
 
 DtInscripcion::DtInscripcion(DtFecha fecha, DtSocio socio){
     this->_fecha = fecha;

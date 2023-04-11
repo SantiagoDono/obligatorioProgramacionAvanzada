@@ -56,3 +56,9 @@ ostream& operator<<(ostream& os, DtEntrenamiento entrenamiento) {
     os << "Clase->Cant. Inscripciones: " << entrenamiento.GetCantInscripciones() << endl;
     return os;
 }
+ostream& operator<<(ostream& os, DtInscripcion inscripcion) {
+    os << "Inscripcion->Fecha: " << inscripcion.GetFecha();
+    os << "Inscripcion->Socio: " << inscripcion.GetSocio().GetNombre()<<" " << inscripcion.GetSocio().GetCi() << endl;
+    return os;
+
+}

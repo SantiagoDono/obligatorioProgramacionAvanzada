@@ -20,6 +20,15 @@ Spinning::Spinning(
 int Spinning::GetCantBicicletas() {
 	return _cantBicicletas;
 }
+DtInscripcion Spinning::GetInscripcionByCiSocio(string ci) {
+	for (int i = 0; i < this->GetCantInscripciones(); i++)
+	{
+		if (this->GetInscripciones()[i]->GetSocio().GetCi() == ci)
+		{
+			return DtInscripcion(this->GetInscripciones()[i]->GetFecha(), this->GetInscripciones()[i]->GetSocio());
+		}
+	}
+}
 //Setters
 void Spinning::SetCantBicicletas(int cantBicicletas) {
 	this->_cantBicicletas = cantBicicletas;
@@ -59,5 +68,18 @@ bool Spinning::SocioInscripto(DtSocio socio) {
 	}
 	return retorno;
 }
+bool Spinning::ExisteInscripcionByCi(string ci) {
+	bool retorno = false;
+	for (int i = 0; i < this->GetCantInscripciones(); i++)
+	{
+		if (this->GetInscripciones()[i]->GetSocio().GetCi() == ci)
+		{
+			retorno = true;
+			break;
+		}
+	}
+	return retorno;
+}
+
 
 Spinning::~Spinning(){}

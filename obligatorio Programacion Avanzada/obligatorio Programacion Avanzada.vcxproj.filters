@@ -104,7 +104,7 @@
     <ClInclude Include="EnumTurno.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="DtInscrpcion.h">
+    <ClInclude Include="DtInscripcion.h">
       <Filter>Archivos de encabezado\DataTypes</Filter>
     </ClInclude>
     <ClInclude Include="DtSocio.h">
