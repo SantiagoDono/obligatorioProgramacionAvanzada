@@ -1,18 +1,18 @@
-# Dependencias
+ # Dependencias
 CONSTANTES = Constantes.h
 
 # Objetivo
-todo: Main.o Entrenamiento.o Spinning.o Clase.o Inscripcion.o Socio.o DtFecha.o DtClase.o DtEntrenamiento.o DtSpinning.o DtSocio.o DtInscripcion.o ServiciosColecciones.o
-	g++ -Wall -o main Main.o Entrenamiento.o Spinning.o Clase.o Inscripcion.o Socio.o DtFecha.o DtClase.o DtEntrenamiento.o DtSpinning.o DtSocio.o DtInscripcion.o ServiciosColecciones.o
+todo: Main.o Entrenamiento.o Spinning.o Clase.o Inscripcion.o Socio.o DtFecha.o DtClase.o DtEntrenamiento.o DtSpinning.o DtSocio.o DtInscripcion.o Impresiones.o Sistema.o
+	g++ -Wall -o main Main.o Entrenamiento.o Spinning.o Clase.o Inscripcion.o Socio.o DtFecha.o DtClase.o DtEntrenamiento.o DtSpinning.o DtSocio.o DtInscripcion.o Impresiones.o Sistema.o
 
 # Principal
-Main.o: Main.cpp ServiciosColecciones.h
+Main.o: Main.cpp Sistema.h Sistema.h
 	g++ -Wall -c Main.cpp
 
 # Clases
-Entrenamiento.o: Entrenamiento.cpp Entrenamiento.h Clase.h DtInscripcion.o $(CONSTANTES)
+Entrenamiento.o: Entrenamiento.cpp Entrenamiento.h Clase.h DtInscripcion.h $(CONSTANTES)
 	g++ -Wall -c Entrenamiento.cpp
-Spinning.o: Spinning.cpp Spinning.h DtInscrpcion.h Clase.h $(CONSTANTES)
+Spinning.o: Spinning.cpp Spinning.h DtInscripcion.h Clase.h $(CONSTANTES)
 	g++ -Wall -c Spinning.cpp
 Clase.o: Clase.cpp Clase.h EnumTurno.h Inscripcion.h $(CONSTANTES)
 	g++ -Wall -c Clase.cpp
@@ -37,12 +37,20 @@ DtEntrenamiento.o: DtEntrenamiento.cpp DtEntrenamiento.h $(CONSTANTES)
 DtSpinning.o: DtSpinning.cpp DtSpinning.h $(CONSTANTES)
 	g++ -Wall -c DtSpinning.cpp
 
-DtInscripcion.o: DtInscripcion.cpp DtInscrpcion.h $(CONSTANTES)
+DtInscripcion.o: DtInscripcion.cpp DtInscripcion.h $(CONSTANTES)
 	g++ -Wall -c DtInscripcion.cpp
 
 # Servicios
-ServiciosColecciones.o: ServiciosColecciones.cpp ServiciosColecciones.h Socio.h Spinning.h Entrenamiento.h $(CONSTANTES)
-	g++ -Wall -c ServiciosColecciones.cpp
+Sistema.o: Sistema.cpp Sistema.h Socio.h Spinning.h Entrenamiento.h $(CONSTANTES)
+	g++ -Wall -c Sistema.cpp
+
+# Sistema
+Sistema.o: Sistema.cpp Sistema.h Impresiones.h $(CONSTANTES)
+	g++ -Wall -c Sistema.cpp
+
+# Impresiones
+Impresiones.o: Impresiones.cpp Impresiones.h $(CONSTANTES)
+	g++ -Wall -c Impresiones.cpp
 
 # Limpieza
 clean:
