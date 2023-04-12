@@ -35,6 +35,7 @@ class Spinning : public Clase
 		bool SocioInscripto(DtSocio socio);
 		DtInscripcion GetInscripcionByCiSocio(string ci);
 		bool ExisteInscripcionByCi(string ci);
+		void borrarIncripcionDeClase(string ciSocio);
 		//Destructor
 		~Spinning();
 };

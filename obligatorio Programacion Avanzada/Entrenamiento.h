@@ -34,6 +34,7 @@ class Entrenamiento :public Clase
 		bool SocioInscripto(DtSocio socio);
 		bool ExisteInscripcionByCi(string ci);
 		DtInscripcion GetInscripcionByCiSocio(string ci);
+		void borrarIncripcionDeClase(string ciSocio);
 		//Destructor
 		~Entrenamiento();
 };

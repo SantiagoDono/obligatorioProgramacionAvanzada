@@ -15,6 +15,7 @@ using namespace std;
 void Manejador(int& entrada, Sistema& sys);
 void agregarSocio(string ci, string nombre, Sistema& sys);
 void agregarInscripcion(string ciSocio, int idClase, DtFecha fecha, Sistema& sys);
+void borrarInscripcion(string ciSocio, int idClase, Sistema& sys);
 enumTurno elegirTurno();
 void agregarClase(DtClase& clase, Sistema& sys, bool spinning);
 void casosDeTest(Sistema& sys);
@@ -84,6 +85,14 @@ void Manejador(int& entrada, Sistema& sys) {
 		cout << endl;
 		break;
 	case 5:
+		cout << "---- 5: Borrar inscripcion ----" << endl;
+		cout << "Ingrese cedula de socio: ";
+		cin >> cedula;
+		cout << "Ingrese id de clase: ";
+		cin >> idClase;
+
+		borrarInscripcion(cedula, idClase, sys);
+
 		cout << endl;
 		break;
 	case 6:
@@ -146,6 +155,44 @@ void agregarInscripcion(string ciSocio, int idClase, DtFecha fecha, Sistema& sys
 
 
 }
+
+void borrarInscripcion(string ciSocio, int idClase, Sistema& sys) {
+	try
+	{
+		bool spinning;
+		if (!sys.existeSocio(ciSocio))
+			throw invalid_argument("No existe el usuario con C.I.: " + ciSocio);
+		if (!sys.existeClase(idClase, spinning))
+			throw invalid_argument("No existe la clase con ID: " + idClase);
+
+		if(spinning)
+		{
+			if(!sys.GetSpinningById(idClase)->SocioInscripto(sys.GetDtSocioByCi(ciSocio)))
+				throw invalid_argument("No existe la inscripcion del usuario en esa clase");
+
+			else{
+				sys.GetSpinningById(idClase)->borrarIncripcionDeClase(ciSocio);
+			}
+		}
+		else
+		{
+			if(!sys.GetEntrenamientoById(idClase)->SocioInscripto(sys.GetDtSocioByCi(ciSocio)))
+				throw invalid_argument("No existe la inscripcion del usuario en esa clase");
+			else
+			{
+				sys.GetEntrenamientoById(idClase)->borrarIncripcionDeClase(ciSocio);
+			}
+		}
+
+		cout << "Se borro la inscripcion del usuario con exito" << endl;
+						
+	}
+	catch(exception& ex)
+	{
+		cerr << "No se pudo borrar la inscripción." << endl << ex.what() << endl;
+	}
+}
+
 enumTurno elegirTurno() {
 	int opcion = 0;
 

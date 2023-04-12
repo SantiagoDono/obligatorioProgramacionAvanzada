@@ -81,5 +81,26 @@ bool Spinning::ExisteInscripcionByCi(string ci) {
 	return retorno;
 }
 
+void Spinning::borrarIncripcionDeClase(string ciSocio)
+{
+	int iter, cantInscripciones = this->GetCantInscripciones();
+	Inscripcion **inscripciones = this->GetInscripciones();
+	for (int i = 0; i < cantInscripciones; i++)
+	{
+		if (inscripciones[i]->GetSocio().GetCi() == ciSocio)
+		{
+			incripciones[i]->~Inscripcion();
+			iter = i;
+		}
+	}
+	for (iter; iter + 1 < cantInscripciones; iter++)
+	{
+		inscripciones[iter] = inscripciones[iter + 1];
+		if(iter + 1 == cantInscripciones - 1)
+			incripciones[iter+1]->~Inscripcion();
+
+	}
+	this->SetCantInscripciones(cantInscripciones-1);
+}
 
 Spinning::~Spinning(){}
