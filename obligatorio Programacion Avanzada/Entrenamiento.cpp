@@ -107,7 +107,7 @@ void Entrenamiento::borrarIncripcionDeClase(string ciSocio)
 			iter = i;
 		}
 	}
-	for (iter; iter + 1 < cantInscripciones; iter++)
+	for (; iter + 1 < cantInscripciones; iter++)
 	{
 		inscripciones[iter] = inscripciones[iter + 1];
 		if (iter + 1 == cantInscripciones - 1)
