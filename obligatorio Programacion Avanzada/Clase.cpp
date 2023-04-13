@@ -1,7 +1,8 @@
 #include "Clase.h"
 #include "Constantes.h"
 
-Clase::Clase(){
+Clase::Clase()
+{
 	this->_id = ID_NULO;
 	this->_nombre = SIN_NOMBRE;
 	this->_turno = Manana;
@@ -27,10 +28,12 @@ enumTurno Clase::GetTurno()
 {
 	return _turno;
 }
-int Clase::GetCantInscripciones() {
+int Clase::GetCantInscripciones()
+{
 	return _cantInscripciones;
 }
-Inscripcion ** Clase::GetInscripciones() {
+Inscripcion **Clase::GetInscripciones()
+{
 	return _inscripciones;
 }
 void Clase::SetId(int id)
@@ -45,18 +48,20 @@ void Clase::SetTurno(enumTurno turno)
 {
 	this->_turno = turno;
 }
-void Clase::SetInscripciones(Inscripcion* inscripciones[MAX_INSCRIPCIONES], int cantInscripciones) {
-	for (int i = 0; i < min(MAX_INSCRIPCIONES, cantInscripciones); i++) {
+void Clase::SetInscripciones(Inscripcion *inscripciones[MAX_INSCRIPCIONES], int cantInscripciones)
+{
+	for (int i = 0; i < min(MAX_INSCRIPCIONES, cantInscripciones); i++)
+	{
 		this->_inscripciones[i] = inscripciones[i];
 	}
 }
-void Clase::SetCantInscripciones(int cantInscripciones) {
+void Clase::SetCantInscripciones(int cantInscripciones)
+{
 	this->_cantInscripciones = cantInscripciones;
 }
 
-//destructor
-Clase::~Clase(){
+// destructor
+Clase::~Clase()
+{
 	delete[] _inscripciones;
 }
-
-

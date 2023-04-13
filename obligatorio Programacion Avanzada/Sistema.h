@@ -8,42 +8,32 @@
 #include "Entrenamiento.h"
 #include "DtSpinning.h"
 #include "DtEntrenamiento.h"
+#include "Impresiones.h"
 
 class Sistema
 {
-	private:
-		Socio* _socios[MAX_SOCIOS]{}; // Se inicializa en el atributo, no en el constructor
-		int _cantSocios;
-		Spinning* _spinning[MAX_CLASES]{};
-		int _cantSpinning;
-		Entrenamiento* _entrenamiento[MAX_CLASES]{};
-		int _cantEntrenamiento;
-	public:
-		Sistema();
+private:
+	Socio *_socios[MAX_SOCIOS]{}; // Se inicializa en el atributo, no en el constructor
+	int _cantSocios;
+	int _cantClases;
+	Clase *_clases[MAX_CLASES]{};
 
-		DtSocio GetDtSocioByCi(string ci);
-		Spinning* GetSpinningById(int id);
-		Entrenamiento* GetEntrenamientoById(int id);
+public:
+	Sistema();
 
-		void insertarSocio(DtSocio socio);
-		void insertarSpinning(DtSpinning spinning);
-		void insertarEntrenamiento(DtEntrenamiento entrenamiento);
-		void insertarInscripcionSpinning(DtInscripcion inscripcion, Spinning* clase);
-		void insertarInscripcionEntrenamiento(DtInscripcion inscripcion, Entrenamiento* clase);
-		
+	DtSocio GetDtSocioByCi(string ci);
+	Clase *GetClaseById(int id);
 
-		bool existeSocio(string ciSocio);
-		bool existeClase(int idClase, bool& spinning);
-		
+	void insertarSocio(DtSocio socio);
+	void insertarClase(DtClase &clase);
+	void insertarInscripcionClase(DtInscripcion inscripcion, Clase *clase);
 
-		~Sistema();
+	bool existeSocio(string ciSocio);
+	bool existeClase(int idClase);
 
+	~Sistema();
 };
 
-
-
-
 ;
-
 
 #endif // !SERVICIOSCOLECCIONES_H

@@ -10,8 +10,9 @@ DtSpinning::DtSpinning(
 	this->_cantBicicletas = cantBicicletas;
 }
 
-int DtSpinning::GetCantBicicletas() {
+int DtSpinning::GetCantBicicletas()
+{
 	return _cantBicicletas;
 }
 
-DtSpinning::~DtSpinning(){}
+DtSpinning::~DtSpinning() {}

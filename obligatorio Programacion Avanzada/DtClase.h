@@ -3,11 +3,10 @@
 #ifndef DTCLASE_H
 #define DTCLASE_H
 
-
 #include <string>
 #include <list>
 #include "EnumTurno.h"
-#include"Constantes.h"
+#include "Constantes.h"
 
 using namespace std;
 
@@ -21,14 +20,14 @@ private:
 
 public:
     DtClase();
-    DtClase(int  id, string nombre, enumTurno turno, int cantInscripciones);
+    DtClase(int id, string nombre, enumTurno turno, int cantInscripciones);
 
     int GetId();
     string GetNombre();
     enumTurno GetTurno();
     int GetCantInscripciones();
 
-    ~DtClase();
+    virtual ~DtClase();
 };
 
 #endif // !1

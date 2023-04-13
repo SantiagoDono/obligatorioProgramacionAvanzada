@@ -1,7 +1,7 @@
 #include "Socio.h"
 #include "Constantes.h"
 
-//constructores	
+// constructores
 Socio::Socio()
 {
 	_ci = SIN_CI;
@@ -12,7 +12,8 @@ Socio::Socio(string ci, string nombre)
 	this->_ci = ci;
 	this->_nombre = nombre;
 }
-string Socio::GetCi() {
+string Socio::GetCi()
+{
 	return _ci;
 }
 string Socio::GetNombre()
@@ -27,6 +28,4 @@ void Socio::SetNombre(string nombre)
 {
 	this->_nombre = nombre;
 }
-Socio::~Socio(){}
-
-
+Socio::~Socio() {}

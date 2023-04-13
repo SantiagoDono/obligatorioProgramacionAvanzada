@@ -5,12 +5,16 @@ DtEntrenamiento::DtEntrenamiento(
 	int id,
 	string nombre,
 	int cantInscripciones,
-	enumTurno turno) : DtClase(id, nombre, turno, cantInscripciones) {
+	enumTurno turno) : DtClase(id, nombre, turno, cantInscripciones)
+{
 	this->_enRambla = enRambla;
 }
 
-bool DtEntrenamiento::GetEnRambla() {
+bool DtEntrenamiento::GetEnRambla()
+{
 	return _enRambla;
 }
 
-DtEntrenamiento::~DtEntrenamiento() {}
+DtEntrenamiento::~DtEntrenamiento()
+{
+}

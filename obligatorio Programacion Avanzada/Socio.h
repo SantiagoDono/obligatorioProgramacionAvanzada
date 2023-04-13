@@ -3,32 +3,31 @@
 #ifndef SOCIO_H
 #define SOCIO_H
 
-#include<iostream>
-#include<stdio.h>
-#include<string.h>
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
 using namespace std;
 class Socio
 {
 private:
-	//atributos
+	// atributos
 	string _ci;
 	string _nombre;
+
 public:
-	//constructor
+	// constructor
 	Socio();
 	Socio(string ci, string nombre);
 
-	//getters
+	// getters
 	string GetCi();
 	string GetNombre();
-	//setters
+	// setters
 	void SetCi(string ci);
 	void SetNombre(string nombre);
 
-	//destructor
+	// destructor
 	~Socio();
 };
 
 #endif // !
-
-

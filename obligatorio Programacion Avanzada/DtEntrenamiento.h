@@ -5,21 +5,22 @@
 
 #include "DtClase.h"
 
-class DtEntrenamiento : public DtClase 
+class DtEntrenamiento : public DtClase
 {
-	private:
-		bool _enRambla;
-	public:
-		DtEntrenamiento(
-			bool enRambla,
-			int id,
-			string nombre,
-			int cantInscripciones,
-			enumTurno turno);
+private:
+	bool _enRambla;
 
-		bool GetEnRambla();
+public:
+	DtEntrenamiento(
+		bool enRambla,
+		int id,
+		string nombre,
+		int cantInscripciones,
+		enumTurno turno);
 
-		~DtEntrenamiento();
+	bool GetEnRambla();
+
+	~DtEntrenamiento();
 };
 
 #endif // !DTENTRENAMIENTO_H

@@ -7,10 +7,12 @@
 
 using namespace std;
 
-class DtSocio {
+class DtSocio
+{
 private:
     string _ci;
     string _nombre;
+
 public:
     DtSocio();
     DtSocio(string ci, string nombre);
@@ -19,7 +21,6 @@ public:
     string GetNombre();
 
     ~DtSocio();
-
 };
 
 #endif // !DTSOCIO_H

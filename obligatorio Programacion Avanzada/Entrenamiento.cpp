@@ -103,18 +103,17 @@ void Entrenamiento::borrarIncripcionDeClase(string ciSocio)
 	{
 		if (inscripciones[i]->GetSocio().GetCi() == ciSocio)
 		{
-			incripciones[i]->~Inscripcion();
+			inscripciones[i]->~Inscripcion();
 			iter = i;
 		}
 	}
 	for (iter; iter + 1 < cantInscripciones; iter++)
 	{
 		inscripciones[iter] = inscripciones[iter + 1];
-		if(iter + 1 == cantInscripciones - 1)
-			incripciones[iter+1]->~Inscripcion();
-
+		if (iter + 1 == cantInscripciones - 1)
+			inscripciones[iter + 1]->~Inscripcion();
 	}
-	this->SetCantInscripciones(cantInscripciones-1);
+	this->SetCantInscripciones(cantInscripciones - 1);
 }
 
 // Destructor

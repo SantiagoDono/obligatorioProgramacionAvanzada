@@ -41,7 +41,7 @@ DtInscripcion.o: DtInscripcion.cpp DtInscripcion.h $(CONSTANTES)
 	g++ -Wall -c DtInscripcion.cpp
 
 # Servicios
-Sistema.o: Sistema.cpp Sistema.h Socio.h Spinning.h Entrenamiento.h $(CONSTANTES)
+Sistema.o: Sistema.cpp Sistema.h Socio.h Spinning.h Entrenamiento.h Impresiones.h $(CONSTANTES)
 	g++ -Wall -c Sistema.cpp
 
 # Sistema

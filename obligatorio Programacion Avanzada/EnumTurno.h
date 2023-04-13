@@ -3,8 +3,8 @@
 #ifndef ENUMTURNO_H
 #define ENUMTURNO_H
 
-
-enum enumTurno {
+enum enumTurno
+{
 	Manana,
 	Tarde,
 	Noche,
